@@ -46,6 +46,9 @@ GitHub repo: pushing to `main` triggers a deploy. Custom domain:
 - `assets/TSD-Enhancement-Millage-Analysis.docx` — the full write-up (Word), including a
   ready-to-post Facebook version
 - `_headers`, `robots.txt` — Cloudflare Pages headers and crawler policy
+- `docs/TOOLING.md` — how this was built: data sources, method, and reproduction steps
+- `docs/PROMPT-HISTORY.md` — the requests that produced the project (provenance)
+- `tools/` — the exact scripts used to generate the Word doc, share images, and banner
 
 ## Disclaimer
 

@@ -1,5 +1,5 @@
 .git
 .DS_Store
 README.md
-build_doc.py
-make_images.py
+docs/
+tools/
