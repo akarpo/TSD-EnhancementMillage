@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fund the Need They Named | Oakland County school enhancement millage, Aug. 4, 2026</title>
+<meta name="description" content="An independent, data-based look at the Oakland County Regional Enhancement Millage on the August 4, 2026 ballot. The District names special education as the problem, then proposes a grab bag. Using Michigan's own data, Oakland already funds its schools far more than its peers.">
+<link rel="canonical" href="https://tsd-enhancementmillage.karpowitsch.org/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tsd-enhancementmillage.karpowitsch.org/">
+<meta property="og:title" content="Fund the Need They Named">
+<meta property="og:description" content="The District names special education as the problem, then proposes to spend the enhancement millage on a grab bag of everything else. The state's own data show Oakland already leads.">
+<meta property="og:image" content="https://tsd-enhancementmillage.karpowitsch.org/assets/funding-chart.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fund the Need They Named">
+<meta name="twitter:description" content="Oakland already funds its schools more than its peers, before any enhancement. If it passes, dedicate it to special education, with measurable results.">
+<meta name="twitter:image" content="https://tsd-enhancementmillage.karpowitsch.org/assets/funding-chart.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f2a44'/%3E%3Ctext x='16' y='22' font-size='17' font-family='Georgia,serif' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#faf9f6; --surface:#ffffff; --surface-2:#f4f2ec; --viz:#fcfcfb;
+    --ink:#161821; --ink-2:#464b58; --muted:#767b87; --border:#e7e4dc; --border-2:#d9d5cb;
+    --brand:#1f2a44; --brand-ink:#1f2a44; --red:#b1201f; --red-soft:#fbe9e7; --green:#1a5e20; --green-soft:#e7f2e8;
+    --oak:#2a78d6; --oak-lite:#9ec5f4; --mac:#eb6834; --amber:#eda100;
+    --shadow:0 1px 2px rgba(20,22,33,.05), 0 6px 22px rgba(20,22,33,.06);
+    --maxw:1080px; --prose:70ch;
+    --radius:14px;
+  }
+  :root[data-theme="dark"]{
+    --bg:#131418; --surface:#1c1e24; --surface-2:#22252c; --viz:#191a19;
+    --ink:#f3f2ee; --ink-2:#c7c8cf; --muted:#9a9ca6; --border:#2c2f38; --border-2:#3a3e49;
+    --brand:#9db6ea; --brand-ink:#c9d6f2; --red:#f08a86; --red-soft:#33221f; --green:#7fc98a; --green-soft:#1c2a1e;
+    --oak:#3987e5; --oak-lite:#6da7ec; --mac:#e0703e; --amber:#c98500;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 26px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#131418; --surface:#1c1e24; --surface-2:#22252c; --viz:#191a19;
+      --ink:#f3f2ee; --ink-2:#c7c8cf; --muted:#9a9ca6; --border:#2c2f38; --border-2:#3a3e49;
+      --brand:#9db6ea; --brand-ink:#c9d6f2; --red:#f08a86; --red-soft:#33221f; --green:#7fc98a; --green-soft:#1c2a1e;
+      --oak:#3987e5; --oak-lite:#6da7ec; --mac:#e0703e; --amber:#c98500;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 26px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:400 17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3{line-height:1.18;letter-spacing:-.012em;color:var(--ink)}
+  a{color:var(--oak)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .prose{max-width:var(--prose)}
+  section{padding:56px 0;border-top:1px solid var(--border)}
+  .eyebrow{font:700 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+  .lead{font-size:19.5px;color:var(--ink-2)}
+
+  /* header */
+  header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;gap:18px;height:58px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--brand-ink);text-decoration:none;white-space:nowrap}
+  .brand .mk{width:26px;height:26px;border-radius:7px;background:var(--brand);color:#fff;display:grid;place-items:center;font:700 15px Georgia,serif}
+  .nav .links{display:flex;gap:16px;margin-left:auto;align-items:center}
+  .nav a.link{color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:600}
+  .nav a.link:hover{color:var(--ink)}
+  .badge{background:var(--red);color:#fff;border-radius:999px;padding:5px 12px;font:700 13px/1 sans-serif;text-decoration:none;white-space:nowrap}
+  .iconbtn{background:none;border:1px solid var(--border-2);color:var(--ink-2);border-radius:8px;width:34px;height:32px;cursor:pointer;font-size:15px}
+  @media(max-width:760px){ .nav .links a.link{display:none} }
+
+  /* hero */
+  .hero{padding:64px 0 40px}
+  .hero h1{font-size:clamp(34px,6vw,58px);font-weight:800;margin:.35em 0 .3em;letter-spacing:-.02em}
+  .hero .sub{font-size:clamp(18px,2.4vw,22px);color:var(--ink-2);max-width:40ch}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:12px 18px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+  .btn.primary{background:var(--brand);color:#fff}
+  .btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+  .btn:hover{transform:translateY(-1px)}
+  .countdown{margin-top:16px;font-size:14px;color:var(--muted)}
+
+  /* KPI tiles */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 20px 18px;box-shadow:var(--shadow)}
+  .kpi .n{font:800 clamp(30px,5vw,42px)/1 -apple-system,sans-serif;letter-spacing:-.02em}
+  .kpi.red .n{color:var(--red)} .kpi.blue .n{color:var(--oak)} .kpi.navy .n{color:var(--brand-ink)}
+  .kpi .l{margin-top:8px;font-size:13.5px;color:var(--ink-2);line-height:1.4}
+  @media(max-width:720px){ .kpis{grid-template-columns:1fr} }
+
+  h2.sec{font-size:clamp(24px,3.6vw,33px);font-weight:800;margin:.1em 0 .1em}
+  h2.sec + .lead{margin-top:10px}
+
+  /* figure / charts */
+  figure{margin:26px 0 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  figure .cap{font-weight:700;font-size:15px;margin-bottom:2px}
+  figure .subcap{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 18px;font-size:13px;color:var(--ink-2)}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .bars{display:flex;flex-direction:column;gap:16px}
+  .brow{}
+  .brow .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:5px}
+  .brow .name{font-weight:650;font-size:14.5px;color:var(--ink)}
+  .brow .name small{color:var(--muted);font-weight:500}
+  .brow .val{font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
+  .track{background:var(--surface-2);border-radius:7px;height:30px;display:flex;overflow:hidden;position:relative}
+  .seg{height:100%;display:flex;align-items:center}
+  .seg.base{background:var(--oak)}
+  .seg.enh{background:var(--oak-lite);border-left:2px solid var(--surface)}
+  .seg.macb{background:var(--mac)}
+  .seg:first-child{border-radius:7px 0 0 7px}
+  .seg:last-child{border-radius:0 7px 7px 0}
+  .track.single .seg{border-radius:7px}
+  .enhtag{color:var(--oak);font-weight:700;font-size:12.5px}
+  .axisnote{margin-top:14px;font-size:12.5px;color:var(--muted)}
+
+  /* table */
+  .tablewrap{overflow-x:auto;margin-top:24px;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:560px;background:var(--surface);font-size:15px}
+  thead th{background:var(--brand);color:#fff;text-align:right;padding:12px 14px;font-size:13.5px;font-weight:700}
+  thead th:first-child{text-align:left}
+  tbody td{padding:11px 14px;border-top:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums}
+  tbody td:first-child{text-align:left;color:var(--ink-2)}
+  tbody tr.total td{background:var(--red-soft);font-weight:800;color:var(--brand-ink)}
+  tbody tr.total td.hot{color:var(--red)}
+  td.hot{color:var(--red);font-weight:700}
+
+  /* two-column juxtaposition */
+  .juxta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  @media(max-width:760px){ .juxta{grid-template-columns:1fr} }
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .card .hd{background:var(--brand);color:#fff;padding:12px 18px;font:700 13px/1.2 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase}
+  .card .bd{padding:18px 20px}
+  .quote{color:var(--brand-ink);font-size:16.5px;font-style:italic;line-height:1.5}
+  ul.tiles{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  ul.tiles li{display:flex;gap:10px;align-items:flex-start;font-weight:650;color:var(--ink)}
+  ul.tiles li::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:2px;background:var(--red);margin-top:8px}
+  .punch{margin-top:16px;background:var(--red-soft);border:1px solid color-mix(in srgb,var(--red) 30%,transparent);
+    border-radius:12px;padding:14px 16px;color:var(--red);font-weight:700}
+
+  /* stat row */
+  .stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;box-shadow:var(--shadow)}
+  .stat .n{font:800 30px/1 sans-serif;color:var(--brand-ink);letter-spacing:-.02em}
+  .stat .l{margin-top:8px;font-size:12.5px;color:var(--ink-2);line-height:1.4}
+  @media(max-width:720px){ .stats4{grid-template-columns:1fr 1fr} }
+
+  /* asks */
+  .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  @media(max-width:820px){ .asks{grid-template-columns:1fr} }
+  .ask{background:var(--green-soft);border:1px solid color-mix(in srgb,var(--green) 26%,transparent);border-radius:14px;padding:20px}
+  .ask .k{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--green);color:#fff;font-weight:800;margin-bottom:10px}
+  .ask h3{margin:.1em 0 .3em;font-size:17px;color:var(--green)}
+  .ask p{margin:0;font-size:14.5px;color:var(--ink-2)}
+
+  .callout{background:var(--surface);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:16px 20px;margin-top:22px;box-shadow:var(--shadow)}
+  details{margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2px 18px}
+  details summary{cursor:pointer;font-weight:700;padding:14px 0;color:var(--brand-ink)}
+  details[open] summary{border-bottom:1px solid var(--border)}
+  details .inner{padding:14px 0;font-size:14.5px;color:var(--ink-2)}
+  details .inner li{margin-bottom:8px}
+
+  footer{border-top:1px solid var(--border);padding:34px 0 60px;color:var(--muted);font-size:13.5px}
+  footer .disc{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px;line-height:1.55}
+  .tip{position:fixed;pointer-events:none;background:var(--brand);color:#fff;padding:6px 10px;border-radius:8px;font-size:12.5px;font-weight:600;opacity:0;transform:translate(-50%,-8px);transition:opacity .1s;z-index:99;white-space:nowrap}
+  @media print{ header.top,.cta,.iconbtn,.badge{display:none} section{padding:22px 0} body{font-size:12px} figure,.card,.kpi,.stat{box-shadow:none} }
+  .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--surface);padding:8px;border-radius:8px;z-index:100}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#top"><span class="mk">$</span> Fund the Need They Named</a>
+  <nav class="links" aria-label="Sections">
+    <a class="link" href="#data">The data</a>
+    <a class="link" href="#email">Their email</a>
+    <a class="link" href="#specialed">Special ed</a>
+    <a class="link" href="#ask">The ask</a>
+    <button class="iconbtn" id="themeBtn" title="Toggle light/dark" aria-label="Toggle light or dark theme">◐</button>
+    <a class="badge" href="#ask">Vote Aug&nbsp;4</a>
+  </nav>
+</div></header>
+
+<main id="main">
+<a id="top"></a>
+<div class="wrap hero">
+  <div class="eyebrow">Oakland County Regional Enhancement Millage &middot; on the ballot Tuesday, August 4, 2026</div>
+  <h1>Fund the need they named.</h1>
+  <p class="sub">The Troy School District says special education is the problem, then proposes to spend the money on a grab bag of everything else. Using Michigan's own data, here is what the campaign leaves out.</p>
+  <div class="cta">
+    <a class="btn primary" href="#data">See the numbers</a>
+    <a class="btn ghost" href="#ask">What it should fund</a>
+    <a class="btn ghost" href="assets/TSD-Enhancement-Millage-Analysis.docx">Download the analysis (Word)</a>
+  </div>
+  <div class="countdown" id="countdown">Vote Tuesday, August 4, 2026.</div>
+
+  <div class="kpis">
+    <div class="kpi blue"><div class="n">$9,184</div><div class="l">Oakland's local school funding per pupil (local property taxes, not total spending), far above Macomb's $7,247, before any enhancement.</div></div>
+    <div class="kpi navy"><div class="n">27% more</div><div class="l">local funding per pupil than Macomb, even though Macomb already levies its own enhancement and Oakland does not. Total funding, counting state aid, is much closer.</div></div>
+    <div class="kpi red"><div class="n">$0</div><div class="l">of the District's stated spending plan is committed to special education, the one need it identifies by name.</div></div>
+  </div>
+</div>
+
+<!-- DATA -->
+<section id="data"><div class="wrap">
+  <div class="eyebrow">The numbers</div>
+  <h2 class="sec">Oakland already leads. This widens the gap.</h2>
+  <p class="lead prose">The campaign's headline is that "44% of Michigan students" already receive enhancement funding, implying Oakland is behind. The State of Michigan's own financial data (2024-25) show the opposite. In local funding, Oakland out-raises Macomb, a neighbor that already levies its own enhancement, by 27% per pupil.</p>
+
+  <figure aria-labelledby="c1cap">
+    <div class="cap" id="c1cap">Total local school funding, per pupil (2024-25)</div>
+    <div class="subcap">Own local sources across all governmental funds. Higher is more locally funded.</div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--oak)"></i> Oakland</span>
+      <span><i class="sw" style="background:var(--oak-lite)"></i> Added by the proposed 1.5-mill millage</span>
+      <span><i class="sw" style="background:var(--mac)"></i> Macomb</span>
+    </div>
+    <div class="bars" id="chart1"></div>
+    <div class="axisnote">Scale 0 to $10,000 per pupil. Source: MDE Bulletin 1014/1011 and Financial Information Database, 2024-25.</div>
+  </figure>
+
+  <figure aria-labelledby="c2cap">
+    <div class="cap" id="c2cap">The county (ISD) levy: passing flips Oakland ahead of Macomb</div>
+    <div class="subcap">What the intermediate district itself levies per pupil. Today Oakland's is below Macomb's, because Macomb has an enhancement and Oakland does not.</div>
+    <div class="bars" id="chart2"></div>
+    <div class="axisnote">Scale 0 to $2,700 per pupil. The proposed millage adds about $781 per pupil, moving Oakland from behind to ahead.</div>
+  </figure>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Local funding per pupil, 2024-25</th><th>Oakland today</th><th>Oakland if it passes</th><th>Macomb*</th></tr></thead>
+    <tbody>
+      <tr><td>Member districts' own local revenue</td><td>$7,402</td><td>$7,402</td><td>$5,273</td></tr>
+      <tr><td>County ISD's own levies (incl. any enhancement)</td><td>$1,781</td><td class="hot">$2,562</td><td>$1,973</td></tr>
+      <tr class="total"><td>Total local, per pupil</td><td>$9,184</td><td class="hot">$9,965</td><td>$7,247</td></tr>
+      <tr><td>Total local, per county resident</td><td>$1,145</td><td class="hot">$1,243</td><td>$887</td></tr>
+    </tbody>
+  </table></div>
+  <p class="axisnote prose">*Macomb already levies a 1.82-mill enhancement (since 2020), and Oakland, with no enhancement at all, still raises 27% more per pupil in local funding. Because Oakland's property is worth far more per pupil, its lower 1.5-mill rate is estimated to raise more per student (about $781, the proposal's figure) than Macomb's higher 1.82-mill rate does.</p>
+  <div class="callout prose"><strong>Funding vs. spending, in plain English.</strong> The figures above are <em>local</em> funding: the slice that comes from local property taxes, which is exactly what this millage raises. That is not the same as total spending. Counting state and federal aid, total per-pupil funding is much closer, about $17,100 per pupil in Oakland versus about $16,100 in Macomb, because Michigan sends more state aid to districts that raise less locally. Oakland's real advantage, and what an enhancement millage adds to, is local dollars.</div>
+</div></section>
+
+<!-- EMAIL -->
+<section id="email"><div class="wrap">
+  <div class="eyebrow">Their own email</div>
+  <h2 class="sec">The problem they name vs. the plan they offer</h2>
+  <p class="lead prose">On June 30, 2026, the Troy School District emailed residents in support of the millage. Read closely, it makes the case against itself.</p>
+  <div class="juxta">
+    <div class="card">
+      <div class="hd">The problem they name (page 3)</div>
+      <div class="bd"><p class="quote">"Special education funding is underfunded by approximately 40%. This means that districts must use dollars from their general fund to support students with special needs to close this gap in funding."</p></div>
+    </div>
+    <div class="card">
+      <div class="hd">The plan they offer (page 5)</div>
+      <div class="bd">
+        <p style="margin:0 0 10px;color:var(--muted);font-size:14px">Six stated uses, every one a slogan, none with a measurable target:</p>
+        <ul class="tiles">
+          <li>Staff Retention &amp; Raises</li>
+          <li>Enhance Student Wellness Supports</li>
+          <li>Stabilize the General Fund Budget</li>
+          <li>Enhance &amp; Maintain Safety Measures</li>
+          <li>Maintain Staff to Student Ratios</li>
+          <li>Maintain &amp; Strengthen District Programming</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="punch">Nowhere in those six buckets is the one thing the District just told you is the problem: special education.</div>
+  <p class="axisnote prose" style="margin-top:14px">The email also advertises that the funds are "unrestricted," and that districts could use them to "increase pay for their teachers," "buy school buses," "hire a school resource officer," and so on: "a variety of uses to support their budgetary goals." That is not a plan. It is a grab bag.</p>
+</div></section>
+
+<!-- SPECIAL ED -->
+<section id="specialed"><div class="wrap">
+  <div class="eyebrow">1 &middot; The real need</div>
+  <h2 class="sec">Special education is a concrete, countable need</h2>
+  <p class="lead prose">The District is right that the gap is real. When Congress passed the Individuals with Disabilities Education Act (IDEA), it promised to cover 40% of the extra cost of educating students with disabilities. It has never funded even half of that. The remainder falls on local general funds, the same dollars that pay for regular classroom teachers, textbooks, and buses.</p>
+  <div class="stats4">
+    <div class="stat"><div class="n">40%</div><div class="l">of special-ed cost Congress promised to fund under IDEA</div></div>
+    <div class="stat"><div class="n">&lt;15%</div><div class="l">what Washington has actually ever paid</div></div>
+    <div class="stat"><div class="n">28.6%</div><div class="l">Michigan's reimbursement, among the lowest in the country</div></div>
+    <div class="stat"><div class="n">$350M+</div><div class="l">estimated statewide special-ed shortfall each year (up to $750M)</div></div>
+  </div>
+  <div class="callout prose">Unlike vague slogans, this is measurable: the general-fund dollars a district is forced to divert to special education, and how much a new revenue source relieves. It is exactly the kind of outcome a millage should be tied to. The MEA, the Autism Alliance of Michigan, and local school boards have named this gap, not a general shortage, as the structural problem for years.</div>
+</div></section>
+
+<!-- GRAB BAG -->
+<section id="grabbag"><div class="wrap">
+  <div class="eyebrow">2 &middot; The plan</div>
+  <h2 class="sec">A grab bag, with nothing to measure</h2>
+  <p class="lead prose">Having named the problem, the email commits not a single dollar to solving it. For a six-year tax on your home, "local flexibility" is being used to mean "trust us." None of the six uses has a target, a number, a baseline, or a way for a taxpayer to check, in 2031, whether the roughly $57 million Troy will have collected did what was promised.</p>
+</div></section>
+
+<!-- THE ASK -->
+<section id="ask"><div class="wrap">
+  <div class="eyebrow">3 &middot; A better proposal</div>
+  <h2 class="sec">Fund what they named. Prove it.</h2>
+  <p class="lead prose">This is not an argument that schools cannot use money. It is an argument for spending it where the District itself says the need is, with results voters can verify.</p>
+  <div class="asks">
+    <div class="ask"><span class="k">1</span><h3>Dedicate 100% to special education</h3><p>Because the funds are legally unrestricted, each district's board should adopt a public policy committing every dollar to closing its special-education shortfall: the general-fund money it is currently forced to divert.</p></div>
+    <div class="ask"><span class="k">2</span><h3>Publish measurable targets</h3><p>State the dollars redirected to special education this year, the general-fund dollars thereby freed for classrooms, and service commitments, then report actuals every year through 2031.</p></div>
+    <div class="ask"><span class="k">3</span><h3>Tie the ask to the need</h3><p>If special education is the reason to tax homes for six years, say so on the record and spend it there, not on an unrestricted "variety of uses."</p></div>
+  </div>
+  <div class="callout prose" style="border-left-color:var(--green)">For Troy alone, the millage is roughly $9.6 million a year, about $57 million over six years. Aimed squarely at special education, that is enough to make a real, measurable dent in the gap the District describes. Spread across a grab bag, it disappears into general operations with nothing to point to.</div>
+</div></section>
+
+<!-- BOTTOM LINE + COST -->
+<section id="bottomline"><div class="wrap">
+  <div class="eyebrow">The bottom line</div>
+  <h2 class="sec">A blank check, dressed up as a deficit</h2>
+  <p class="lead prose">To its credit, the District does disclose the cost. This is not about hiding the price. It is about the promise. A district that names special education as the problem, then asks for six years of unrestricted dollars it will not commit to that problem, while implying you are behind when you are ahead, is not leveling with voters.</p>
+
+  <div class="tablewrap" style="max-width:640px"><table>
+    <thead><tr><th>What 1.5 mills costs a homeowner</th><th>Taxable value</th><th>Per year</th><th>Over 6 years</th></tr></thead>
+    <tbody>
+      <tr><td>Home worth $200,000</td><td>$100,000</td><td>$150</td><td>$900</td></tr>
+      <tr><td>Home worth $400,000</td><td>$200,000</td><td>$300</td><td>$1,800</td></tr>
+      <tr class="total"><td>Troy 2025 median sale (about $450,000)</td><td>$225,000</td><td class="hot">$338</td><td class="hot">$2,025</td></tr>
+      <tr><td>Home worth $600,000</td><td>$300,000</td><td>$450</td><td>$2,700</td></tr>
+    </tbody>
+  </table></div>
+  <p class="axisnote prose">The $200,000, $400,000, and $600,000 rows are the District's own examples; the Troy row uses Troy's 2025 median sale price of about $450,000 (Redfin, Zillow, RealtyTrac). Taxable value is roughly half of market value, so a rule of thumb is about $75 per year for every $100,000 of a home's value. Homes held a long time under Michigan's assessment cap pay less. An enhancement millage applies to your primary residence, unlike the 18-mill operating tax, which does not.</p>
+
+  <div class="cta" style="margin-top:26px">
+    <a class="btn primary" href="assets/TSD-Enhancement-Millage-Analysis.docx">Download the full analysis</a>
+    <a class="btn ghost" href="assets/funding-chart.png">Share the chart</a>
+    <a class="btn ghost" href="assets/problem-vs-plan.png">Share the comparison</a>
+  </div>
+</div></section>
+
+<!-- SOURCES -->
+<section id="sources"><div class="wrap">
+  <div class="eyebrow">Show your work</div>
+  <h2 class="sec">Sources &amp; method</h2>
+  <details open><summary>Data, definitions, and sources</summary>
+  <div class="inner"><ul>
+    <li><strong>District communication:</strong> Troy School District, "Oakland County Enhancement Millage Proposal," email newsletter, June 30, 2026. All quotations and the six spending tiles are from that email.</li>
+    <li><strong>Local revenue &amp; membership:</strong> Michigan Department of Education Bulletin 1014 and 1011 (2024-25) and the state Financial Information Database (Revenue Data, 2024-25). Oakland member-district local revenue totals reconcile exactly to the MDE Bulletin 1011 export. Macomb ISD enhancement (1.8198 mills, about $55M+ per year, 2020-2029) per Macomb Intermediate School District. Population from the U.S. Census, 2024.</li>
+    <li><strong>Special-education funding:</strong> IDEA's 40% commitment vs. actual federal funding (never above about 15%) and Michigan's roughly 28.6% reimbursement, per the Michigan Education Association ("Facts v. Fallacy: School Funding"), Michigan House Fiscal Agency testimony, the Michigan League for Public Policy, and the Autism Alliance of Michigan. Statewide shortfall estimated at $350M to $750M per year.</li>
+    <li><strong>Proposal terms:</strong> 1.5 mills for six years (2026-2031), about $781 per pupil per year, collected beginning December 2026, distributed to all public districts and eligible academies on a per-pupil basis; the ISD keeps none. Sources: oaklandenhancementmillage.com, Oakland County Times and Detroit News (March 25, 2026).</li>
+    <li><strong>"Local funding" vs. "spending":</strong> "local funding" is each entity's own local sources (property tax plus other local), governmental funds, excluding state and federal aid and excluding ISD-to-district pass-through, to avoid double counting. It is not total spending: total per-pupil operating funding, adding state and federal aid, is about $17,100 in Oakland and about $16,100 in Macomb (MDE Financial Information Database, 2024-25). Per-pupil figures use fall membership; the enhancement is shown at the campaign's own $781 per pupil figure. Troy home values from Redfin, Zillow, and RealtyTrac (2025-26).</li>
+  </ul></div>
+  </details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="disc">
+    <strong>Independent analysis.</strong> This page was prepared by an Oakland County resident as civic commentary on a public ballot question. It is not affiliated with, authorized by, or paid for by the Troy School District, Oakland Schools, any school district, or any ballot committee. Factual claims are drawn from the public sources listed above; the conclusions are opinion. Quotations from the District's newsletter are reproduced for comment and criticism.
+  </div>
+  <div>Oakland County Regional Enhancement Millage &middot; ballot date Tuesday, August 4, 2026 &middot; last updated July 2026.</div>
+</div></footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  // theme
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  var saved=localStorage.getItem('theme');
+  if(saved){ root.setAttribute('data-theme',saved); }
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',next); localStorage.setItem('theme',next);
+  });
+
+  // countdown
+  try{
+    var vote=new Date(2026,7,4); var now=new Date();
+    var days=Math.ceil((vote-now)/86400000);
+    var el=document.getElementById('countdown');
+    if(days>1) el.textContent='Vote Tuesday, August 4, 2026 ('+days+' days away).';
+    else if(days===1) el.textContent='Vote is tomorrow: Tuesday, August 4, 2026.';
+    else if(days===0) el.textContent='Election day: today, Tuesday, August 4, 2026.';
+  }catch(e){}
+
+  // build bar charts
+  function rowsFor(data, max){
+    var host=document.getElementById(data.id); host.innerHTML='';
+    data.rows.forEach(function(r){
+      var el=document.createElement('div'); el.className='brow';
+      var basePct=(r.base/max*100), enhPct=(r.enh?r.enh/max*100:0);
+      var total=r.base+(r.enh||0);
+      var single=(!r.enh);
+      el.innerHTML=
+        '<div class="top"><div class="name">'+r.name+(r.note?' <small>'+r.note+'</small>':'')+'</div>'+
+        '<div class="val">'+fmt(total)+(r.enh?' <span class="enhtag">(+'+fmt(r.enh)+')</span>':'')+'</div></div>'+
+        '<div class="track'+(single?' single':'')+'" role="img" aria-label="'+r.name+': '+fmt(total)+'">'+
+          '<div class="seg '+(r.mac?'macb':'base')+'" style="width:'+basePct.toFixed(2)+'%" data-tip="'+r.name+': '+fmt(r.base)+'"></div>'+
+          (r.enh?'<div class="seg enh" style="width:'+enhPct.toFixed(2)+'%" data-tip="Proposed millage adds '+fmt(r.enh)+' per pupil"></div>':'')+
+        '</div>';
+      host.appendChild(el);
+    });
+  }
+  function fmt(n){return '$'+n.toLocaleString('en-US');}
+
+  rowsFor({id:'chart1', rows:[
+    {name:'Oakland today', note:'(no enhancement)', base:9184},
+    {name:'Oakland if it passes', base:9184, enh:781},
+    {name:'Macomb', note:'(already levies 1.82 mills)', base:7247, mac:true}
+  ]}, 10000);
+
+  rowsFor({id:'chart2', rows:[
+    {name:'Oakland today', base:1781},
+    {name:'Macomb', note:'(has an enhancement)', base:1973, mac:true},
+    {name:'Oakland if it passes', base:1781, enh:781}
+  ]}, 2700);
+
+  // tooltip
+  var tip=document.getElementById('tip');
+  document.addEventListener('mouseover',function(e){
+    var t=e.target.closest('[data-tip]'); if(!t) return;
+    tip.textContent=t.getAttribute('data-tip'); tip.style.opacity='1';
+  });
+  document.addEventListener('mousemove',function(e){
+    if(tip.style.opacity==='1'){ tip.style.left=e.clientX+'px'; tip.style.top=(e.clientY-6)+'px'; }
+  });
+  document.addEventListener('mouseout',function(e){ if(e.target.closest('[data-tip]')) tip.style.opacity='0'; });
+})();
+</script>
+</body>
+</html>
