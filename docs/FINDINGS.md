@@ -194,14 +194,16 @@ is zero-sum — Troy's gain dilutes every other district.
 (2025-26), inbound falling off its 2018-19 peak while outbound rose steadily.
 
 ## 6. Open / unverified
-- **"Oakland could come back for up to 3 mills in 2034"** — unverified as stated. MCL
-  380.705(1) does cap enhancement millages at 3 mills and §705(5) allows terms up to 20
-  years, and nothing in §705 imposes a waiting period or election-frequency limit (unlike
-  MCL 380.681(8), which caps CTE millage elections at two per year — a deliberate
-  contrast). Wayne County has twice returned to voters before its levy expired. But
-  whether two *concurrent* §705 authorizations can be stacked to reach 3.0 mills has no
-  precedent, case law, or guidance found. Treat as a textual reading, not settled law.
-  The specific year 2034 has no evident basis; the proposal runs 2026-2031.
+- **The date of any future renewal.** The *substance* here is settled and is what the
+  calculator models: MCL 380.705(1) caps enhancement millages at 3 mills, this one asks
+  1.5, §705(5) permits terms up to 20 years and renewal, and a renewal may be put to
+  voters at any rate up to the cap. Nothing in §705 imposes a waiting period or an
+  election-frequency limit either, unlike MCL 380.681(8), which caps CTE millage elections
+  at two per year — a deliberate contrast. Wayne County has renewed twice, each time years
+  before its levy expired. What is *not* supported is any particular year: this levy runs
+  2026-2031, and no source points to 2034. The real procedural gate is §705(2), which
+  requires constituent boards representing a majority of the county's pupils to adopt
+  matching resolutions before the ISD board can place anything on the ballot.
 - **"Oakland has never voted on an enhancement millage before"** — probably true, but this
   is proof of absence from web search only. Wayne County's 2016 approval is the likely
   source of any "2016" recollection. Worth a call to the Oakland County Clerk before
