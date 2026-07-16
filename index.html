@@ -208,6 +208,22 @@
   .nb i{position:absolute;top:2px;bottom:2px;border-radius:2px}
   .nb i.d{background:var(--red);right:50%} .nb i.r{background:var(--green);left:50%}
 
+  /* --- timeline (OC history) --- */
+  .tl{margin-top:26px;border-left:2px solid var(--border-2);padding-left:0}
+  .tl .ev{position:relative;padding:0 0 26px 26px}
+  .tl .ev::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:var(--surface);border:2px solid var(--border-2)}
+  .tl .ev.hot::before{background:var(--red);border-color:var(--red)}
+  .tl .ev:last-child{padding-bottom:0}
+  .tl .yr{font:700 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:var(--red)}
+  .tl .ev h4{margin:5px 0 5px;font-size:16.5px;color:var(--ink)}
+  .tl .ev p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  .tl .ev .src{display:block;margin-top:7px;font-size:12px;color:var(--muted)}
+  .pull{margin:14px 0 4px;padding:14px 18px;background:var(--red-soft);border-radius:10px;
+    border:1px solid color-mix(in srgb,var(--red) 24%,transparent)}
+  .pull q{display:block;font:italic 16.5px/1.5 Georgia,serif;color:var(--red)}
+  .pull cite{display:block;margin-top:7px;font-style:normal;font-size:12px;color:var(--muted)}
+
   footer{border-top:1px solid var(--border);padding:34px 0 60px;color:var(--muted);font-size:13.5px}
   footer .disc{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px;line-height:1.55}
   .tip{position:fixed;pointer-events:none;background:var(--brand);color:#fff;padding:6px 10px;border-radius:8px;font-size:12.5px;font-weight:600;opacity:0;transform:translate(-50%,-8px);transition:opacity .1s;z-index:99;white-space:nowrap}
@@ -225,6 +241,7 @@
     <a class="link" href="#specialed">Special ed</a>
     <a class="link" href="#ask">The ask</a>
     <a class="link" href="#numbers">The numbers</a>
+    <a class="link" href="#history">OC history</a>
     <button class="iconbtn" id="themeBtn" title="Toggle light/dark" aria-label="Toggle light or dark theme">◐</button>
     <a class="badge" href="#ask">Vote Aug&nbsp;4</a>
   </nav>
@@ -486,6 +503,81 @@
   </details>
 </div></section>
 
+<!-- OC HISTORY -->
+<section id="history"><div class="wrap">
+  <div class="eyebrow">OC history</div>
+  <h2 class="sec">The last time Oakland County voted a school tax for special education</h2>
+  <p class="lead prose">This page asks the District to commit the millage to special education and report the results. That is not an abstract worry. Twenty-five years ago, Oakland County voters approved a tax for special education, and a good deal of it went into an office building while children waited for services. Here is what happened, from the reporting at the time.</p>
+
+  <div class="tl">
+    <div class="ev">
+      <div class="yr">September 25, 2001</div>
+      <h4>A special election almost nobody voted in</h4>
+      <p>Oakland Schools, the county's intermediate district, put special-education and vocational-education millage increases to voters in a standalone special election. Fewer than <strong>8% of registered voters</strong> turned out. Running the election by itself cost about <strong>$300,000</strong>. Critics called it a stealth election.</p>
+      <span class="src">Mackinac Center for Public Policy, "Eliminate Intermediate School Districts," Oct. 6, 2003</span>
+    </div>
+
+    <div class="ev hot">
+      <div class="yr">2002 &ndash; 2003</div>
+      <h4>The money helped pay for a headquarters</h4>
+      <p>Oakland Schools built a new administration building on Pontiac Lake Road in Waterford, across the street from the offices it already had. Its own board hired a forensic accounting firm, the Whall Group, to examine the district's finances. Investigators found, in the Free Press's words, "lax billing practices and the <strong>use of special education money to help fund a new $29.5-million building</strong> and a technology project." The Mackinac Center later put the special-education share at <strong>$18 million</strong> of the total; that figure appears in no other source we could find, so treat it as one organisation's estimate rather than an established fact.</p>
+      <span class="src">Detroit Free Press, "Board fires Oakland's school chief," Lori Higgins, Feb. 1, 2003; The Oakland Press, Jan. 11, 2003; Mackinac Center, Oct. 6, 2003</span>
+    </div>
+
+    <div class="ev hot">
+      <div class="yr">January 20, 2005</div>
+      <h4>How it was done, from a witness under oath</h4>
+      <p>The clearest account of the mechanism is not in any newspaper. It is in the trial record. Bill Lee, the district's plant and facilities consultant, testified that an assistant superintendent, at the superintendent's behest, asked him to <strong>recalculate how much of the new administration building's square footage could be attributed to special education</strong> by counting common areas, corridors, meeting rooms and storage. Lee's testimony about the purpose is quoted in the federal court's opinion:</p>
+      <div class="pull">
+        <q>"make sure that they were getting the maximum amount from special ed as far as being able to charge them in square footage-wise"</q>
+        <cite>Testimony of Bill Lee, Trial Transcript, Jan. 20, 2005, at 99, quoted in <em>Redmond v. Worthington</em>, No. 07-15152 (E.D. Mich.)</cite>
+      </div>
+      <p style="margin-top:12px">That is the whole thing in one sentence: not a bookkeeping error, but a deliberate effort to maximise how much of an office building could be billed to special education.</p>
+    </div>
+
+    <div class="ev hot">
+      <div class="yr">August 22, 2003</div>
+      <h4>What the Free Press found</h4>
+      <p>A Free Press investigation into Oakland Schools' spending documented administrators' travel, meals and gifts: <strong>$3,548</strong> in airfare for a trip to Germany and France, <strong>$3,295</strong> for a San Diego trip, <strong>$730</strong> on Palm organizers, <strong>$405</strong> on custom-wrapped candy, <strong>$545</strong> on a single retreat meal. One sentence in that story is the reason this section exists.</p>
+      <div class="pull">
+        <q>"While school officials spent freely, some special-needs students were put on waiting lists for services."</q>
+        <cite>Detroit Free Press, "School Bosses in Oakland Wine, Dine and Live it up on Taxpayers' Dime," L.L. Brasier, Aug. 22, 2003</cite>
+      </div>
+    </div>
+
+    <div class="ev">
+      <div class="yr">January 31, 2003</div>
+      <h4>The superintendent was fired</h4>
+      <p>The board fired Superintendent James Redmond, who had led the district since 1995. Among the grounds: arranging <strong>15 employee buyouts totalling more than $680,000</strong> without the board's knowledge, and using <strong>$450</strong> of professional-development money, in the board's phrase, "for his own purposes and pleasure," on flying lessons.</p>
+      <span class="src">Detroit Free Press, Feb. 1, 2003; The Oakland Press, "Redmond stripped of duties," Diana Dillaber Murray, Jan. 11, 2003</span>
+    </div>
+
+    <div class="ev">
+      <div class="yr">March 2004 &ndash; February 2005</div>
+      <h4>Charged, convicted, and acquitted</h4>
+      <p>On March 29, 2004, Attorney General Mike Cox charged Redmond with felony embezzlement and misconduct in office. An Oakland County jury <strong>convicted him of misconduct in office and of a conflict-of-interest offence</strong> covering contracts between a public servant and their own public body, and <strong>acquitted him of embezzlement</strong>. The conduct proven at trial was self-dealing: he chaired the board of the MINDS Institute while signing district contracts with it, and the district paid it more than <strong>$500,000</strong>. He was sentenced to six months in jail and three years' probation. The conviction was affirmed on appeal, the Michigan Supreme Court declined to hear it, and a federal habeas petition was denied in 2012.</p>
+      <p style="margin-top:9px"><strong>Two things this does not mean.</strong> The criminal case was about the MINDS Institute self-dealing, <em>not</em> about the building; the forensic report on the building's funding did not describe his actions as criminal, and no charge was ever brought over it. And Redmond remained free on bond throughout his appeals; we found no record confirming he served the six months.</p>
+      <span class="src">Education Week, Ann Bradley, Feb. 9, 2005; <em>People v. Redmond</em>, No. 261458, 2006 WL 3298360 (Mich. Ct. App., Nov. 14, 2006), leave denied, 480 Mich. 883 (2007); <em>Redmond v. Worthington</em>, No. 07-15152 (E.D. Mich., July 17, 2012)</span>
+    </div>
+
+    <div class="ev">
+      <div class="yr">November 29, 2004</div>
+      <h4>The law changed, and it changed because of this</h4>
+      <p>State Rep. Ruth Johnson of Holly, whose district was in Oakland County, chaired a House subcommittee that was granted subpoena power. The seven-bill package that followed did not die. <strong>All of it passed</strong>, as Public Acts 412 through 419 of 2004.</p>
+      <p style="margin-top:9px">Read the title of Johnson's own bill and you can see the building in it. House Bill 5839 became <strong>2004 PA 415</strong>: <em>"uses for special education and vocational education bond proceeds and millages; clarify and limit duration of certain intermediate school district millages."</em> It restricts what an intermediate district may do with money raised for special education, and requires a pro-rata split where a facility only partly serves those programs. It is, in plain terms, a law against doing what had just been done.</p>
+      <p style="margin-top:9px">Its companion, <strong>2004 PA 412</strong>, created <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-380-622a" rel="noopener">MCL 380.622a</a>, which for the first time subjected intermediate districts to independent audits directed by the Department of Treasury. The list of things those audits must examine reads like a table of contents for the preceding two years: adherence to travel guidelines, administrator compensation, non-competitively-bid contract modifications, FOIA compliance, misuse of public funds, and <strong>"proper expenditure of tax levies for vocational-technical and special education purposes."</strong></p>
+      <span class="src">MIRS, Apr. 15, 2003; HB 5839 (2004 PA 415, approved Nov. 29, 2004); HB 5457 (2004 PA 412, adding MCL 380.622a, eff. July 1, 2006); Michigan House Legislative Analysis of the package</span>
+    </div>
+  </div>
+
+  <div class="callout prose" style="border-left-color:var(--green);margin-top:30px">
+    <strong>What this does and does not tell you about August 4.</strong> It would be wrong to say the 2003 story could simply repeat. It could not, in that form. An enhancement millage is a different instrument: <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-380-705" rel="noopener">MCL 380.705(3)</a> requires the intermediate district to pay <em>every dollar</em> out to its constituent districts within <strong>10 days</strong>, on a per-pupil basis. Oakland Schools keeps none of it and could not build itself anything with it. The 2001 levy was an ISD millage the ISD itself kept and spent. This one is not.
+    <div style="margin-top:12px">What the history does tell you is narrower, and still worth knowing: in this county, money that voters approved for special education has already, once, ended up somewhere else, and the people who noticed were reporters and a forensic accountant rather than any built-in safeguard. The enhancement millage does not remove that risk so much as move it. The money lands in 28 local general funds as <em>unrestricted</em> dollars, and what happens next is up to 28 local boards. Which is the whole reason to ask for the commitment in writing, and for the report every year.</div>
+  </div>
+
+  <p class="axisnote prose" style="margin-top:18px"><strong>A note on the sourcing, because it matters here.</strong> The spine of this account is the court record: the Michigan Court of Appeals opinion and the federal habeas opinion, both public, both quoting sworn testimony. That is deliberate. The contemporaneous Free Press, Oakland Press and MIRS reporting survives online only as reprints on a parent-advocacy site, the Detroit News originals sitting behind a paywall; the text is internally consistent and matches the court record, but a reprint is not an original and we are not going to pretend otherwise. Where accounts differ we say so: the building's cost is variously given as $29 million, $29.5 million and $30 million, apparently reporting drift as construction went on, and the $18 million special-education share is the Mackinac Center's figure alone. James Redmond left office more than twenty years ago; this section is about an institution's record and a statute's origin, not about a person.</p>
+</div></section>
+
 <!-- SOURCES -->
 <section id="sources"><div class="wrap">
   <div class="eyebrow">Show your work</div>
@@ -497,6 +589,7 @@
     <li><strong>Special-education funding:</strong> IDEA's 40% <em>maximum authorized</em> share and the FY2025 federal share of about 10.2% of national average per-pupil expenditure, per the Congressional Research Service (<a href="https://www.congress.gov/crs_external_products/R/PDF/R44624/R44624.10.pdf" rel="noopener">R44624, "IDEA Funding: A Primer"</a>, updated Feb. 2026). Michigan's 86% actual coverage of approved special-education costs and the <strong>$616.8M</strong> remaining shortfall (FY2023-24), plus the 28.6138% <em>Durant</em> constitutional floor, per the <a href="https://www.house.mi.gov/hfa/PDF/Alpha/Fiscal_Brief_Special_Education_Feb2026.pdf" rel="noopener">Michigan House Fiscal Agency, "Fiscal Brief: Special Education Funding"</a> (Feb. 25, 2026). Context from the Michigan League for Public Policy ("Michigan Special Education Funding 101," May 2024) and the Autism Alliance of Michigan. <em>Correction, July 2026: an earlier version of this page cited the MEA's "Facts v. Fallacy: School Funding" for these figures. That article does not discuss special education; the attribution was wrong and has been replaced with the primary sources above. The earlier "$350M to $750M" range came from 2023 Autism Alliance testimony and has been replaced with the Fiscal Agency's published current figure.</em></li>
     <li><strong>Proposal terms:</strong> 1.5 mills for six years (2026-2031), about $781 per pupil per year, collected beginning December 2026, distributed to all public districts and eligible academies on a per-pupil basis; the ISD keeps none. Sources: oaklandenhancementmillage.com, Oakland County Times and Detroit News (March 25, 2026).</li>
     <li><strong>"Local funding" vs. "spending":</strong> "local funding" is each entity's own local sources (property tax plus other local), governmental funds, excluding state and federal aid and excluding ISD-to-district pass-through, to avoid double counting. It is not total spending: total per-pupil operating funding, adding state and federal aid, is about $17,100 in Oakland and about $16,100 in Macomb (MDE Financial Information Database, 2024-25). Per-pupil figures use fall membership; the enhancement is shown at the campaign's own $781 per pupil figure. Troy home values from Redfin (median sale price $433,750, December 2025); Zillow's ZHVI, a value index rather than a sale price, reads about $442,000.</li>
+    <li><strong>OC history (2001-2005):</strong> the Sept. 25, 2001 special/vocational education millage and its under-8% turnout, and the $18M-of-$29M building figure, per the Mackinac Center for Public Policy, <a href="https://www.mackinac.org/V2003-29" rel="noopener">"Eliminate Intermediate School Districts"</a> (Jack McHugh and Brennan Brown, Oct. 6, 2003). The forensic finding of "lax billing practices and the use of special education money to help fund a new $29.5-million building," the firing of Superintendent James Redmond, the 15 buyouts totalling over $680,000 and the $450 in flying lessons, per the Detroit Free Press, "Board fires Oakland's school chief" (Lori Higgins, Feb. 1, 2003). The spending detail and the waiting-list quotation, per the Detroit Free Press, "School Bosses in Oakland Wine, Dine and Live it up on Taxpayers' Dime" (L.L. Brasier, Aug. 22, 2003). The conviction for misconduct in office and conflict of interest, and the acquittal on embezzlement, per Education Week (Ann Bradley, Feb. 9, 2005) and <em>People v. Redmond</em>, No. 261458 (Mich. Ct. App., Nov. 14, 2006), leave denied 480 Mich. 883 (2007). The legislative response per MIRS (Apr. 15, 2003) and the Michigan House Legislative Analysis of HB 5457 and companions (complete to Sept. 8, 2004); we found no public act number for any of them. Distribution mechanics of an enhancement millage per <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-380-705" rel="noopener">MCL 380.705</a>.</li>
   </ul></div>
   </details>
 </div></section>

@@ -148,3 +148,21 @@ is public and sourced in [`TOOLING.md`](TOOLING.md).
    $9.6M, Macomb's $55M to the audited $66.4M, and Troy's median sale to $435,000, and
    fixed the dark-mode dead code. Corrections are noted in-place on the page rather than
    made silently.
+
+**27.** *"Can you please find information on how the Oakland ISD building was created in 1990 and there was a scandal about it? I dont want to tell you too much, I want you to find this"* / *"Yes, that is the story I was referring to. I want you to incorporate this into the site in a section at the end called 'OC History'"*
+→ Found it, and the date anchor was off by about a dozen years: the millage was **2001**, the
+   building opened **2003**, the reforms passed **2004**, the conviction came **2005**. Nothing
+   resembling it exists around 1990. (Two plausible sources of the misremembering: Oakland
+   Schools' own records show a PA-18 special-education *distribution* shortfall from 1988-89
+   discovered in 1990-91, which is also a "special-ed money went wrong at Oakland Schools"
+   story; and Oakland Unified in **California** was engulfed in a theft-and-patronage scandal in
+   September 1989, which is the wrong Oakland and contaminates almost every search.)
+   Built the **OC History** section on the court record rather than on the news reprints, because
+   the Free Press / Oakland Press / MIRS coverage survives online only on a parent-advocacy site
+   with the Detroit News originals paywalled. The best evidence turned out to be sworn trial
+   testimony quoted in the federal habeas opinion: the district's facilities consultant was asked
+   to recount the building's square footage attributable to special education, counting corridors
+   and storage, to "make sure that they were getting the maximum amount from special ed."
+
+**28.** *"Now I want you to create a 500 word, couple paragraph, plain formatting post saved as a word document on my desktop..."* / *"...in the style of my language that I've used interacting with you across prompts, a largely a 'just the facts', but also a 'Here's the whole picture that no one to date has clearly laid out'"*
+→ `tools/make_post.py`, writing to the OneDrive-redirected Desktop.
