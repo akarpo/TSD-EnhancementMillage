@@ -66,3 +66,66 @@ is public and sourced in [`TOOLING.md`](TOOLING.md).
 
 **17.** *"Thank you, great job with this. Please create .md files for this project for how you created the tooling that you used, and all prompt history, and upload it to the Github repo"*
 → This document, plus [`TOOLING.md`](TOOLING.md) and the scripts in [`/tools`](../tools).
+
+---
+
+## Session 2 (July 16, 2026): review, and the net-donor question
+
+**18.** *"Please review the repo 'tsd-enhancementmillage' on my github, which is online at 'https://tsd-enhancementmillage.karpowitsch.org/'"*
+→ Reviewed the code, the Cloudflare config, and the live site, and fact-checked the
+   published claims against primary sources. Confirmed the PII scrub is clean (no email
+   address appears in any file in any commit) and that `.assetsignore` really does keep
+   `docs/`, `tools/`, and `README.md` off the deployed site. Findings recorded in
+   [`FINDINGS.md`](FINDINGS.md); the significant ones are that the downloadable Word doc
+   still carries the pre-softening language, and that the MEA article cited for the
+   special-education figures contains no special-education content.
+
+**19.** *"...I want you to build a section called 'the numbers', where you break down the section 705 3 mill count legal maximum, and that the District could potentially come back for up to 3 mills in 2034. Also... I want you to build an interactive graph that uses enrollment numbers for each school, using SEMCOG data projections... I want to model to what degree are Troy School District residents net donors, and if Troy School District loses student population while other Districts gain, as a proportion, Troy's net donor amount will increase... a calculator for taxable value (which is typically half o state equalized value)..."*
+→ Two corrections came out of this before any code was written. First, taxable value is
+   not half of state equalized value: **SEV** is half of market value, and **taxable
+   value is capped *at* SEV** by Proposal A until a transfer of ownership uncaps it.
+   Building `TV = SEV/2` would have halved every tax figure on the page. Second, and
+   larger: the net-donor premise does not survive the data. See #21.
+
+**20.** *"I want to press you on the Troy taxable claim - where are you getting those numbers? Troy has a huge amount of taxable property, is the largest city in Oakland County"*
+→ Fair challenge, and the premise is correct: Troy ranks **4th of 28** in total taxable
+   value ($5.08B). But donor status turns on taxable value **per pupil**, and there Troy
+   ranks **16th of 28** ($414,336) because it also has the county's second-largest
+   enrollment. Birmingham's tax base is larger than Troy's while serving 40% fewer
+   students, giving it 2.4x Troy's per-pupil base. Provenance traced to MDE Bulletin
+   1014's `HSEV`/`NHSEV` columns, which the bulletin's own glossary defines as ad valorem
+   **taxable** value from Form DS4410, and verified against MDE's own published
+   per-pupil columns.
+
+**21.** *"Are those %'s your citing for Oakland County? Who gained in Oakland County while Troy decreased? I find this very hard to believe"*
+→ Re-checked against a second, independent instrument (MI School Data fall headcount, a
+   raw body count rather than blended FTE). Both sources agree: only four of 28 districts
+   grew — **Avondale, Oxford, Novi, Ferndale**. The finding is not that Troy shrank while
+   others grew; it is that **Troy shrank while almost everyone shrank more**. Troy's
+   −6.8% ranks 10th of 28 against a county-wide −11.8%. That is why Troy's *share* of
+   pupils rose, and why it is drifting further into net-receiver territory rather than
+   toward donor status. `enrollment_trend.py` now runs this cross-check on every
+   invocation and prints where the two sources disagree.
+
+**22.** *"Please remember that nearly 700-1000 students are school of choice students outside of Troy. You need to absolutely factor in 105/105c values for each district in this calculation"*
+→ A real methodological gap. MCL 380.705(3) distributes on **membership**, so a district
+   is paid for the nonresident students it enrolls under Sections 105/105c, while the
+   tax is levied on property **inside its boundary**. School of choice therefore breaks
+   the link between who pays and who is counted, and the sign depends on direction:
+   inbound students make a district more of a net receiver, outbound push it toward
+   donor. Researched against primary sources; treatment recorded in
+   [`TOOLING.md`](TOOLING.md).
+
+**23.** *"Please use primary sources when identify 105/105c counts"*
+→ Restricted the 105/105c research to state primary records (MDE state aid reports, the
+   Pupil Accounting Manual, CEPI, MCL 388.1705/1705c) rather than district pages or news
+   coverage.
+
+**24.** *"Please ensure this current tooling you've created is captured with version control, .md files are capturing prompt history (are they arleady?), and everything is reproducible and uploaded to github"*
+→ They were not — this file stopped at #17. Added entries 18-24, packaged the analysis
+   as [`millage_data.py`](../tools/millage_data.py),
+   [`net_position.py`](../tools/net_position.py) and
+   [`enrollment_trend.py`](../tools/enrollment_trend.py) (all of which fetch their own
+   data from state servers and run from a clean checkout), corrected the errors this
+   review found in [`TOOLING.md`](TOOLING.md) and [`tools/README.md`](../tools/README.md),
+   and recorded the review in [`FINDINGS.md`](FINDINGS.md).
