@@ -4,8 +4,12 @@ A record of what a review of this repo and its published claims turned up, and o
 net-position analysis that followed. Kept in the repo because the site's whole premise is
 that its numbers can be checked; findings against it belong here too.
 
-Nothing in this document has been applied to `index.html`. These are notes for the
-author, not edits.
+**Status.** Sections 1-4 have now been **fixed** — the site, the Word document, and the
+share images were corrected on July 16, 2026, and the corrections are noted in-place on
+the page rather than made silently. Section 5 (the net-position analysis) shipped as the
+"The numbers" section, as a calculator with no argument attached. Section 6 lists what
+remains open. The findings are kept here, uncorrected, as the record of what was wrong
+and why.
 
 ---
 

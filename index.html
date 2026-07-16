@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund the Need They Named | Oakland County school enhancement millage, Aug. 4, 2026</title>
-<meta name="description" content="An independent, data-based look at the Oakland County Regional Enhancement Millage on the August 4, 2026 ballot. If it passes, Troy would receive about $9.7M a year; the reasonable step is to put it toward the special-education gap the District itself cites, and report the results.">
+<meta name="description" content="An independent, data-based look at the Oakland County Regional Enhancement Millage on the August 4, 2026 ballot. If it passes, Troy would receive about $9.6M a year; the reasonable step is to put it toward the special-education gap the District itself cites, and report the results.">
 <link rel="canonical" href="https://tsd-enhancementmillage.karpowitsch.org/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tsd-enhancementmillage.karpowitsch.org/">
@@ -160,6 +160,54 @@
   details .inner{padding:14px 0;font-size:14.5px;color:var(--ink-2)}
   details .inner li{margin-bottom:8px}
 
+  /* --- interactive calculators (section: the numbers) --- */
+  .law{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+  @media(max-width:760px){ .law{grid-template-columns:1fr} }
+  .law .l{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+  .law .l h4{margin:0 0 6px;font-size:14.5px;color:var(--brand-ink)}
+  .law .l p{margin:0;font-size:14px;color:var(--ink-2)}
+  .law .l .q{display:block;margin-top:8px;font:italic 13px/1.5 Georgia,serif;color:var(--muted);border-left:2px solid var(--border-2);padding-left:10px}
+
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:13px;font-weight:650;color:var(--ink-2);margin-bottom:5px}
+  .field input[type=number],.field select{width:100%;padding:10px 12px;border:1px solid var(--border-2);border-radius:9px;
+    background:var(--surface);color:var(--ink);font:700 16px/1.2 inherit;font-variant-numeric:tabular-nums}
+  .field input[type=number]:focus,.field select:focus,input.fte:focus{outline:2px solid var(--oak);outline-offset:1px}
+  .field .hint{margin-top:5px;font-size:12px;color:var(--muted);line-height:1.45}
+  .calcwrap{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:22px;align-items:start}
+  @media(max-width:820px){ .calcwrap{grid-template-columns:1fr} }
+  .chain{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:4px 16px}
+  .chain .step{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--border)}
+  .chain .step:last-child{border-bottom:0}
+  .chain .step .k{font-size:13.5px;color:var(--ink-2)}
+  .chain .step .k small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+  .chain .step .v{font:800 17px/1 sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .chain .step.big .v{font-size:22px;color:var(--red)}
+  .chain .step.big .k{font-weight:700;color:var(--ink)}
+
+  .ctrls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:18px 0 6px;font-size:13.5px}
+  .ctrls label{display:inline-flex;align-items:center;gap:7px;color:var(--ink-2);cursor:pointer}
+  .ctrls .mini{background:var(--surface);border:1px solid var(--border-2);color:var(--ink-2);border-radius:8px;
+    padding:6px 11px;font:650 12.5px/1 inherit;cursor:pointer}
+  .ctrls .mini:hover{color:var(--ink)}
+  .ctrls .live{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--muted);font-size:12.5px}
+
+  table.dt{min-width:720px}
+  table.dt tbody td{padding:7px 12px}
+  table.dt tbody tr.me td{background:color-mix(in srgb,var(--oak) 9%,transparent)}
+  table.dt tbody tr.acad td:first-child{color:var(--muted)}
+  table.dt tbody tr.acad td:first-child::after{content:" academy";font-size:10.5px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--muted);opacity:.75}
+  input.fte{width:74px;padding:4px 7px;border:1px solid var(--border-2);border-radius:6px;background:var(--surface);
+    color:var(--ink);font:700 13.5px/1.3 inherit;text-align:right;font-variant-numeric:tabular-nums}
+  input.fte.ch{border-color:var(--oak);background:color-mix(in srgb,var(--oak) 10%,var(--surface))}
+  td.net{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.net.d{color:var(--red)} td.net.r{color:var(--green)}
+  .nb{position:relative;height:15px;min-width:120px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .nb::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border-2);z-index:1}
+  .nb i{position:absolute;top:2px;bottom:2px;border-radius:2px}
+  .nb i.d{background:var(--red);right:50%} .nb i.r{background:var(--green);left:50%}
+
   footer{border-top:1px solid var(--border);padding:34px 0 60px;color:var(--muted);font-size:13.5px}
   footer .disc{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px;line-height:1.55}
   .tip{position:fixed;pointer-events:none;background:var(--brand);color:#fff;padding:6px 10px;border-radius:8px;font-size:12.5px;font-weight:600;opacity:0;transform:translate(-50%,-8px);transition:opacity .1s;z-index:99;white-space:nowrap}
@@ -176,6 +224,7 @@
     <a class="link" href="#email">Their email</a>
     <a class="link" href="#specialed">Special ed</a>
     <a class="link" href="#ask">The ask</a>
+    <a class="link" href="#numbers">The numbers</a>
     <button class="iconbtn" id="themeBtn" title="Toggle light/dark" aria-label="Toggle light or dark theme">◐</button>
     <a class="badge" href="#ask">Vote Aug&nbsp;4</a>
   </nav>
@@ -197,7 +246,7 @@
   <div class="kpis">
     <div class="kpi blue"><div class="n">$9,184</div><div class="l">Oakland's local school funding per pupil (local property taxes, not total spending), far above Macomb's $7,247, before any enhancement.</div></div>
     <div class="kpi navy"><div class="n">27% more</div><div class="l">local funding per pupil than Macomb, even though Macomb already levies its own enhancement and Oakland does not. Total funding, counting state aid, is much closer.</div></div>
-    <div class="kpi green"><div class="n">$9.7M</div><div class="l">a year Troy would receive if the millage passes, on top of already-high local funding, enough to make a real dent in the special-education gap the District itself cites.</div></div>
+    <div class="kpi green"><div class="n">$9.6M</div><div class="l">a year Troy would receive if the millage passes, on top of already-high local funding, enough to make a real dent in the special-education gap the District itself cites.</div></div>
   </div>
 </div>
 
@@ -235,7 +284,7 @@
       <tr><td>Total local, per county resident</td><td>$1,145</td><td class="hot">$1,243</td><td>$887</td></tr>
     </tbody>
   </table></div>
-  <p class="axisnote prose">*Macomb already levies a 1.82-mill enhancement (since 2020), and Oakland, with no enhancement at all, still raises 27% more per pupil in local funding. Because Oakland's property is worth far more per pupil, its lower 1.5-mill rate is estimated to raise more per student (about $781, the proposal's figure) than Macomb's higher 1.82-mill rate does.</p>
+  <p class="axisnote prose">Components are rounded and may not sum exactly to the totals shown; the totals are computed from unrounded figures. *Macomb already levies a 1.82-mill enhancement (since 2020), and Oakland, with no enhancement at all, still raises 27% more per pupil in local funding. Because Oakland's property is worth far more per pupil, its lower 1.5-mill rate is estimated to raise more per student (about $781, the proposal's figure) than Macomb's higher 1.82-mill rate does.</p>
   <div class="callout prose"><strong>Funding vs. spending, in plain English.</strong> The figures above are <em>local</em> funding: the slice that comes from local property taxes, which is exactly what this millage raises. That is not the same as total spending. Counting state and federal aid, total per-pupil funding is much closer, about $17,100 per pupil in Oakland versus about $16,100 in Macomb, because Michigan sends more state aid to districts that raise less locally. Oakland's real advantage, and what an enhancement millage adds to, is local dollars.</div>
 
   <p class="eyebrow" style="margin-top:30px">The bigger picture</p>
@@ -245,7 +294,7 @@
     <div class="stat"><div class="n">~12%</div><div class="l">of Michigan's public-school students are enrolled in them</div></div>
     <div class="stat"><div class="n">$85M+</div><div class="l">Oakland's estimated net subsidy to schools statewide each year, via the State Education Tax alone</div></div>
   </div>
-  <p class="axisnote prose">Under Proposal A, the 6-mill State Education Tax and state sales and income taxes are pooled statewide and returned per pupil, so property-rich areas pay in more than they draw back. This does not mean Oakland's own schools are underfunded; it means Oakland already pays more than its share statewide and funds its own schools richly, which is why the "we're behind" framing does not hold. (Oakland tax base about $77B of $481B statewide; enrollment 162,000 of 1.38 million. Sources: Michigan Senate Fiscal Agency, 2024; MDE, 2024-25.)</p>
+  <p class="axisnote prose">Under Proposal A, the 6-mill State Education Tax and state sales and income taxes are pooled statewide and returned per pupil, so property-rich areas pay in more than they draw back. This does not mean Oakland's own schools are underfunded; it means Oakland already pays more than its share statewide and funds its own schools richly, which is why the "we're behind" framing does not hold. (Oakland school-district taxable value about $77B; statewide taxable value $481.5B; enrollment about 162,000 of 1.38 million. Sources: Michigan Senate Fiscal Agency and Michigan Treasury, 2024; MDE, 2024-25.) <strong>Showing the work:</strong> Oakland paid $480.6M of the $2.845B statewide State Education Tax in 2024, which is 16.9%, while enrolling about 12% of the state's students. On those figures the gap is nearer <strong>$114M</strong> a year, so "$85M+" is a deliberately conservative floor rather than a point estimate. Two honest caveats: the School Aid Fund does not hand the State Education Tax back per pupil in equal dollars, because Michigan funds the foundation allowance from local 18-mill revenue first and fills the gap with state aid, which is what Proposal A was built to do; and the State Education Tax is only about 16% of the School Aid Fund, the rest being sales and income tax.</p>
 </div></section>
 
 <!-- EMAIL -->
@@ -282,14 +331,14 @@
 <section id="specialed"><div class="wrap">
   <div class="eyebrow">1 &middot; The real need</div>
   <h2 class="sec">Special education is a concrete, countable need</h2>
-  <p class="lead prose">The District is right that the gap is real. When Congress passed the Individuals with Disabilities Education Act (IDEA), it promised to cover 40% of the extra cost of educating students with disabilities. It has never funded even half of that. The remainder falls on local general funds, the same dollars that pay for regular classroom teachers, textbooks, and buses.</p>
+  <p class="lead prose">The District is right that the gap is real, though its own "40%" figure needs care. When Congress passed the Individuals with Disabilities Education Act (IDEA), it authorized federal funding of <em>up to</em> 40% of the extra cost of educating students with disabilities. That was a ceiling Congress allowed itself, never a promise it made, and regular appropriations have never come close. The remainder falls on local general funds, the same dollars that pay for regular classroom teachers, textbooks, and buses.</p>
   <div class="stats4">
-    <div class="stat"><div class="n">40%</div><div class="l">of special-ed cost Congress promised to fund under IDEA</div></div>
-    <div class="stat"><div class="n">&lt;15%</div><div class="l">what Washington has actually ever paid</div></div>
-    <div class="stat"><div class="n">28.6%</div><div class="l">Michigan's reimbursement, among the lowest in the country</div></div>
-    <div class="stat"><div class="n">$350M+</div><div class="l">estimated statewide special-ed shortfall each year (up to $750M)</div></div>
+    <div class="stat"><div class="n">40%</div><div class="l">of the extra cost Congress authorized IDEA to cover, as a maximum, in 1975</div></div>
+    <div class="stat"><div class="n">10.2%</div><div class="l">what Washington actually paid in FY2025, as a share of average per-pupil spending</div></div>
+    <div class="stat"><div class="n">86%</div><div class="l">of Michigan's approved special-ed costs that federal, state and local dollars together do cover</div></div>
+    <div class="stat"><div class="n">$616.8M</div><div class="l">Michigan's remaining special-education shortfall, every year</div></div>
   </div>
-  <div class="callout prose">This is concrete and measurable: the general-fund dollars a district is forced to divert to special education, and how much a new revenue source relieves. It is exactly the kind of outcome a millage should be tied to. The MEA, the Autism Alliance of Michigan, and local school boards have named this gap, not a general shortage, as the structural problem for years.</div>
+  <div class="callout prose"><strong>Two honest caveats on the District's number.</strong> "Underfunded by approximately 40%" appears to borrow the <em>federal</em> IDEA target and apply it to Michigan. The state's own House Fiscal Agency puts actual coverage at 86%, so the real gap is nearer 14%. And Michigan's often-quoted "28.6%" is not its coverage rate at all: it is a constitutional <em>floor</em> fixed by the Michigan Supreme Court in <em>Durant</em> (1997), a minimum the state must pay, not a measure of what it does pay. None of that makes the gap imaginary. It makes it <strong>$616.8 million a year</strong>, which is a real number, published by the Legislature's own fiscal agency, and far more useful than a borrowed percentage. It is also concrete and measurable: the general-fund dollars a district is forced to divert to special education, and how much a new revenue source relieves. That is exactly the kind of outcome a millage should be tied to.</div>
 </div></section>
 
 <!-- THE PLAN -->
@@ -309,31 +358,132 @@
     <div class="ask"><span class="k">2</span><h3>Publish measurable targets</h3><p>State the dollars redirected to special education this year, the general-fund dollars thereby freed for classrooms, and service commitments, then report actuals every year through 2031.</p></div>
     <div class="ask"><span class="k">3</span><h3>Tie the ask to the need</h3><p>If special education is the reason to tax homes for six years, say so on the record and spend it there, not on an unrestricted "variety of uses."</p></div>
   </div>
-  <div class="callout prose" style="border-left-color:var(--green)">For Troy alone, the millage is about $9.7 million a year, roughly $58 million over six years. Aimed squarely at special education, that is enough to make a real, measurable dent in the gap the District describes. Spread thinly across general operations, it would leave nothing specific to point to.</div>
+  <div class="callout prose" style="border-left-color:var(--green)">For Troy alone, the millage is about $9.6 million a year, roughly $57 million over six years. Aimed squarely at special education, that is enough to make a real, measurable dent in the gap the District describes. Spread thinly across general operations, it would leave nothing specific to point to.</div>
 </div></section>
 
 <!-- BOTTOM LINE + COST -->
 <section id="bottomline"><div class="wrap">
   <div class="eyebrow">The bottom line</div>
   <h2 class="sec">The money is the answer to the problem they named</h2>
-  <p class="lead prose">If the millage passes, Troy would receive about $9.7 million a year. The District points to federal special-education underfunding (IDEA) as the squeeze on its budget. So the resources to relieve that squeeze would be in hand. It is hard to name the special-education gap as the problem, accept the money, and then not put it toward closing that gap. This is not a knock on the District, which does disclose the cost and makes a fair case that schools are stretched. It is a simple ask: fund the need you named, and show the results.</p>
+  <p class="lead prose">If the millage passes, Troy would receive about $9.6 million a year. The District points to federal special-education underfunding (IDEA) as the squeeze on its budget. So the resources to relieve that squeeze would be in hand. It is hard to name the special-education gap as the problem, accept the money, and then not put it toward closing that gap. This is not a knock on the District, which does disclose the cost and makes a fair case that schools are stretched. It is a simple ask: fund the need you named, and show the results.</p>
 
   <div class="tablewrap" style="max-width:640px"><table>
     <thead><tr><th>What 1.5 mills costs a homeowner</th><th>Taxable value</th><th>Per year</th><th>Over 6 years</th></tr></thead>
     <tbody>
       <tr><td>Home worth $200,000</td><td>$100,000</td><td>$150</td><td>$900</td></tr>
       <tr><td>Home worth $400,000</td><td>$200,000</td><td>$300</td><td>$1,800</td></tr>
-      <tr class="total"><td>Troy 2025 median sale (about $450,000)</td><td>$225,000</td><td class="hot">$338</td><td class="hot">$2,025</td></tr>
+      <tr class="total"><td>Troy 2025 median sale (about $435,000)</td><td>$217,500</td><td class="hot">$326</td><td class="hot">$1,958</td></tr>
       <tr><td>Home worth $600,000</td><td>$300,000</td><td>$450</td><td>$2,700</td></tr>
     </tbody>
   </table></div>
-  <p class="axisnote prose">The $200,000, $400,000, and $600,000 rows are the District's own examples; the Troy row uses Troy's 2025 median sale price of about $450,000 (Redfin, Zillow, RealtyTrac). Taxable value is roughly half of market value, so a rule of thumb is about $75 per year for every $100,000 of a home's value. Homes held a long time under Michigan's assessment cap pay less. An enhancement millage applies to your primary residence, unlike the 18-mill operating tax, which does not.</p>
+  <p class="axisnote prose">The $200,000, $400,000, and $600,000 rows are the District's own examples; the Troy row uses Troy's 2025 median sale price of about $435,000 (Redfin reported $433,750 for December 2025). Taxable value is roughly half of market value, so a rule of thumb is about $75 per year for every $100,000 of a home's value. Homes held a long time under Michigan's assessment cap pay less. An enhancement millage applies to your primary residence, unlike the 18-mill operating tax, which does not.</p>
 
   <div class="cta" style="margin-top:26px">
     <a class="btn primary" href="assets/TSD-Enhancement-Millage-Analysis.docx">Download the full analysis</a>
     <a class="btn ghost" href="assets/funding-chart.png">Share the chart</a>
     <a class="btn ghost" href="assets/problem-vs-plan.png">Share the comparison</a>
   </div>
+</div></section>
+
+<!-- THE NUMBERS -->
+<section id="numbers"><div class="wrap">
+  <div class="eyebrow">The numbers</div>
+  <h2 class="sec">Run the math yourself</h2>
+  <p class="lead prose">This section makes no argument. It explains the law that governs this millage, then hands you the same figures the State of Michigan publishes so you can check any claim on this page, including ours.</p>
+
+  <h3 style="margin:34px 0 0;font-size:19px">Section 705, in plain English</h3>
+  <p class="axisnote prose" style="margin-top:6px">An enhancement millage is created by <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-380-705" rel="noopener">MCL 380.705</a>, part of Michigan's Revised School Code. Five things in it decide how the money moves.</p>
+  <div class="law">
+    <div class="l">
+      <h4>The cap is 3 mills. This asks for 1.5.</h4>
+      <p>Half the legal maximum is on the ballot.</p>
+      <span class="q">"a regional enhancement property tax may be levied by an intermediate school district at a rate not to exceed 3 mills" &middot; &sect;705(1)</span>
+    </div>
+    <div class="l">
+      <h4>Up to 20 years, and renewable</h4>
+      <p>This one runs six years, 2026 to 2031. Nothing in &sect;705 sets a waiting period or limits how often an ISD may ask. Wayne County has twice returned to voters years before its levy expired.</p>
+      <span class="q">"may be levied for a term not to exceed 20 years... and may be renewed" &middot; &sect;705(5)</span>
+    </div>
+    <div class="l">
+      <h4>You pay by property. You get back by pupil.</h4>
+      <p>This is the whole mechanism. Taxable value appears nowhere in the payout formula, so a district's share of the money depends only on how many children it counts.</p>
+      <span class="q">"dividing the total amount of the revenue by the combined membership of the constituent districts... and multiplying that quotient by the constituent district's membership" &middot; &sect;705(3)</span>
+    </div>
+    <div class="l">
+      <h4>Your homestead is not exempt</h4>
+      <p>The principal residence exemption removes 18 mills of <em>local district</em> operating tax. It does not reach an enhancement millage, which an <em>intermediate</em> district levies under a different section. A homeowner who pays none of the 18 mills pays all of this.</p>
+      <span class="q">MCL 211.7cc exempts a principal residence only from tax "levied by a local school district... under section 1211"</span>
+    </div>
+    <div class="l">
+      <h4>One county-wide vote</h4>
+      <p>Approval is by a majority of all Oakland County school electors, not district by district. A district whose own voters reject it still pays it, and still receives its per-pupil share.</p>
+      <span class="q">"if approved by a majority of the intermediate school electors voting on the question" &middot; &sect;705(1)</span>
+    </div>
+    <div class="l">
+      <h4>Academies count too</h4>
+      <p>Qualifying public school academies are constituent districts for the payout, and for a brand new levy they are in from day one. They hold no taxable property, so they receive without paying. Whether they are in the denominator changes everyone's per-pupil figure.</p>
+      <span class="q">a qualifying academy "is considered to be a single constituent district" &middot; &sect;705(7)</span>
+    </div>
+  </div>
+
+  <figure style="margin-top:32px">
+    <div class="cap">What your home would pay</div>
+    <div class="subcap">Michigan taxes the <em>taxable value</em> of your home, which is not its market price.</div>
+    <div class="calcwrap">
+      <div>
+        <div class="field">
+          <label for="mv">Your home's market value</label>
+          <input type="number" id="mv" value="450000" min="0" max="10000000" step="10000" inputmode="numeric">
+          <div class="hint">Troy's 2025 median sale was about $434,000 to $442,000 (Redfin).</div>
+        </div>
+        <div class="field">
+          <label for="tvIn">Your taxable value <button class="mini" id="useSev" type="button" style="float:right;padding:3px 8px">use SEV</button></label>
+          <input type="number" id="tvIn" value="225000" min="0" max="5000000" step="1000" inputmode="numeric">
+          <div class="hint">Starts at your SEV, which is the most it can ever be. If you have owned your home for years it is <em>lower</em>, because Proposal A caps how fast taxable value may rise until the home is sold. Your real figure is on your winter tax bill, or from your city assessor. We do not guess it for you.</div>
+        </div>
+        <div class="field">
+          <label for="mills">Millage rate <span id="millsEcho" style="color:var(--oak)">1.50 mills</span></label>
+          <input type="range" id="mills" value="1.5" min="0.1" max="3" step="0.05" style="width:100%">
+          <div class="hint">On the ballot: <strong>1.5 mills</strong>. Section 705 caps it at <strong>3</strong>. Drag to price any future renewal.</div>
+        </div>
+      </div>
+      <div class="chain" id="chain"></div>
+    </div>
+    <div class="axisnote">SEV is half of market value by law. Taxable value is capped <em>at</em> SEV by Proposal A, never above it, and resets to SEV when a home is sold.</div>
+  </figure>
+
+  <figure style="margin-top:26px">
+    <div class="cap">Who pays, and who receives</div>
+    <div class="subcap">Every Oakland district and academy at the rate you chose. Edit any enrollment to see what changes.</div>
+    <div class="ctrls">
+      <label><input type="checkbox" id="incAcad" checked> Include academies (as the ballot says)</label>
+      <button class="mini" id="resetBtn" type="button">Reset enrollment</button>
+      <span class="live" id="live"></span>
+    </div>
+    <div class="tablewrap" style="margin-top:10px">
+      <table class="dt">
+        <thead><tr>
+          <th>District</th><th>Pupils</th><th>Taxable value</th><th>Pays</th><th>Receives</th><th>Net</th><th style="width:150px"></th>
+        </tr></thead>
+        <tbody id="dtBody"></tbody>
+      </table>
+    </div>
+    <p class="axisnote prose">A district is a <strong style="color:var(--red)">net donor</strong> when its share of the county's taxable value is bigger than its share of the county's pupils, and a <strong style="color:var(--green)">net receiver</strong> when it is smaller. Changing the millage rate scales every figure up or down together, so it never changes who is which. Only enrollment does that.</p>
+    <div class="callout prose">
+      <strong>One caveat this table cannot show.</strong> The payout follows <em>membership</em>, which counts the students a district actually enrolls, including nonresidents who attend under Michigan's schools-of-choice law. Their families pay property tax where they live, not where their child goes to school. Troy enrolled <strong>743 such students in 2024-25</strong> against 195 residents leaving, so the district's figure below is more favorable than the position of Troy's own taxpayers.
+    </div>
+  </figure>
+
+  <details style="margin-top:22px"><summary>Where these numbers come from, and how to re-run them</summary>
+  <div class="inner">
+    <ul>
+      <li><strong>Both columns come from one state file:</strong> the Michigan Department of Education's <strong>Bulletin 1014</strong> export for 2024-25. <code>AVG FTE</code> is the fall pupil count a district is paid on; <code>HSEV + NHSEV</code> is the ad valorem <strong>taxable</strong> value it is taxed on. Despite the legacy column names, Bulletin 1014's own glossary defines those as taxable value "as reported on the DS4410", not SEV.</li>
+      <li><strong>Vintage.</strong> These are 2024-25 taxable values. The ballot estimates the 2026 levy at <strong>$125,756,247</strong>, which implies a base about 9% higher, i.e. two years of growth. Because growth lifts what a district pays and what it receives together, it does not change anyone's donor or receiver status.</li>
+      <li><strong>Why the per-pupil figure moves.</strong> The campaign's <strong>$781</strong> implies 161,020 pupils, which matches Oakland's 28 traditional districts. Counting the 24 academies and their 16,163 students, as &sect;705(7) and the ballot language provide for, gives about <strong>$707</strong>. Toggle the checkbox above to see both.</li>
+      <li><strong>Check it yourself.</strong> The scripts that produced this table are in the repository: <code>tools/net_position.py</code> and <code>tools/enrollment_trend.py</code>. They download the state files themselves and recompute from scratch, and they cross-check the result against MDE's own published per-pupil columns, against the certified ballot estimate, and against a second independent enrollment source.</li>
+    </ul>
+  </div>
+  </details>
 </div></section>
 
 <!-- SOURCES -->
@@ -343,10 +493,10 @@
   <details open><summary>Data, definitions, and sources</summary>
   <div class="inner"><ul>
     <li><strong>District communication:</strong> Troy School District, "Oakland County Enhancement Millage Proposal," email newsletter, June 30, 2026. All quotations and the six spending tiles are from that email; the <a href="assets/district-email.html">full text is reproduced here</a> (recipient information removed). County-wide campaign materials: <a href="https://oaklandenhancementmillage.com/" rel="noopener">oaklandenhancementmillage.com</a>.</li>
-    <li><strong>Local revenue &amp; membership:</strong> Michigan Department of Education Bulletin 1014 and 1011 (2024-25) and the state Financial Information Database (Revenue Data, 2024-25). Oakland member-district local revenue totals reconcile exactly to the MDE Bulletin 1011 export. Macomb ISD enhancement (1.8198 mills, about $55M+ per year, 2020-2029) per Macomb Intermediate School District. Population from the U.S. Census, 2024.</li>
-    <li><strong>Special-education funding:</strong> IDEA's 40% commitment vs. actual federal funding (never above about 15%) and Michigan's roughly 28.6% reimbursement, per the Michigan Education Association ("Facts v. Fallacy: School Funding"), Michigan House Fiscal Agency testimony, the Michigan League for Public Policy, and the Autism Alliance of Michigan. Statewide shortfall estimated at $350M to $750M per year.</li>
+    <li><strong>Local revenue &amp; membership:</strong> Michigan Department of Education Bulletin 1014 and 1011 (2024-25) and the state Financial Information Database (Revenue Data, 2024-25). Oakland member-district local revenue totals reconcile exactly to the MDE Bulletin 1011 export. Macomb ISD enhancement (1.8198 mills levied in 2025, 2020-2029) per Macomb Intermediate School District. MISD's audited financial statements for the year ended June 30, 2024 report <strong>$66,430,519</strong> levied, and state that "in 2024-2025, over $70 million will be levied." <em>Correction, July 2026: an earlier version said "about $55M+ per year," which was the 2020 first-year ballot estimate and understated the current levy by roughly 20%.</em> Population from the U.S. Census, 2024.</li>
+    <li><strong>Special-education funding:</strong> IDEA's 40% <em>maximum authorized</em> share and the FY2025 federal share of about 10.2% of national average per-pupil expenditure, per the Congressional Research Service (<a href="https://www.congress.gov/crs_external_products/R/PDF/R44624/R44624.10.pdf" rel="noopener">R44624, "IDEA Funding: A Primer"</a>, updated Feb. 2026). Michigan's 86% actual coverage of approved special-education costs and the <strong>$616.8M</strong> remaining shortfall (FY2023-24), plus the 28.6138% <em>Durant</em> constitutional floor, per the <a href="https://www.house.mi.gov/hfa/PDF/Alpha/Fiscal_Brief_Special_Education_Feb2026.pdf" rel="noopener">Michigan House Fiscal Agency, "Fiscal Brief: Special Education Funding"</a> (Feb. 25, 2026). Context from the Michigan League for Public Policy ("Michigan Special Education Funding 101," May 2024) and the Autism Alliance of Michigan. <em>Correction, July 2026: an earlier version of this page cited the MEA's "Facts v. Fallacy: School Funding" for these figures. That article does not discuss special education; the attribution was wrong and has been replaced with the primary sources above. The earlier "$350M to $750M" range came from 2023 Autism Alliance testimony and has been replaced with the Fiscal Agency's published current figure.</em></li>
     <li><strong>Proposal terms:</strong> 1.5 mills for six years (2026-2031), about $781 per pupil per year, collected beginning December 2026, distributed to all public districts and eligible academies on a per-pupil basis; the ISD keeps none. Sources: oaklandenhancementmillage.com, Oakland County Times and Detroit News (March 25, 2026).</li>
-    <li><strong>"Local funding" vs. "spending":</strong> "local funding" is each entity's own local sources (property tax plus other local), governmental funds, excluding state and federal aid and excluding ISD-to-district pass-through, to avoid double counting. It is not total spending: total per-pupil operating funding, adding state and federal aid, is about $17,100 in Oakland and about $16,100 in Macomb (MDE Financial Information Database, 2024-25). Per-pupil figures use fall membership; the enhancement is shown at the campaign's own $781 per pupil figure. Troy home values from Redfin, Zillow, and RealtyTrac (2025-26).</li>
+    <li><strong>"Local funding" vs. "spending":</strong> "local funding" is each entity's own local sources (property tax plus other local), governmental funds, excluding state and federal aid and excluding ISD-to-district pass-through, to avoid double counting. It is not total spending: total per-pupil operating funding, adding state and federal aid, is about $17,100 in Oakland and about $16,100 in Macomb (MDE Financial Information Database, 2024-25). Per-pupil figures use fall membership; the enhancement is shown at the campaign's own $781 per pupil figure. Troy home values from Redfin (median sale price $433,750, December 2025); Zillow's ZHVI, a value index rather than a sale price, reads about $442,000.</li>
   </ul></div>
   </details>
 </div></section>
@@ -423,6 +573,166 @@
     if(tip.style.opacity==='1'){ tip.style.left=e.clientX+'px'; tip.style.top=(e.clientY-6)+'px'; }
   });
   document.addEventListener('mouseout',function(e){ if(e.target.closest('[data-tip]')) tip.style.opacity='0'; });
+
+  // ---------- the numbers: calculators ----------
+  // Oakland County school districts and public school academies, 2024-25.
+  // Source: MDE Bulletin 1014 export (25_Bulletin1014Export.xlsx).
+  //   f = fall pupil count (AVG FTE)  -- what a district RECEIVES on
+  //   v = taxable value (HSEV+NHSEV)  -- what a district PAYS on
+  //   a = public school academy (no taxing authority, so v is 0)
+  // Regenerate with: python3 tools/export_site_data.py
+  var DISTRICTS=[
+    {c:"63260",n:"Rochester Community",f:14775.57,v:6810187791},
+    {c:"63150",n:"Troy",f:12249.25,v:5075301482},
+    {c:"63290",n:"Walled Lake",f:11735.57,v:6472205587},
+    {c:"63200",n:"Farmington Public",f:9056.31,v:4673260468},
+    {c:"63190",n:"Clarkston Community",f:9024.69,v:2779942766},
+    {c:"63240",n:"South Lyon",f:8316.44,v:3453032088},
+    {c:"63220",n:"Huron Valley",f:7594.98,v:3490579462},
+    {c:"63110",n:"Oxford",f:7425.40,v:1537144065},
+    {c:"63010",n:"Birmingham",f:7350.22,v:7209878598},
+    {c:"63230",n:"Lake Orion",f:6921.87,v:2699055116},
+    {c:"63300",n:"Waterford",f:6774.29,v:3331830952},
+    {c:"63100",n:"Novi Community",f:6766.14,v:2974780316},
+    {c:"63050",n:"Berkley",f:5647.25,v:1440698027},
+    {c:"63080",n:"Bloomfield Hills",f:4995.28,v:4868258969},
+    {c:"63070",n:"Avondale",f:4922.36,v:1597902452},
+    {c:"63040",n:"Royal Oak",f:4834.43,v:3872957376},
+    {c:"63160",n:"West Bloomfield",f:4753.87,v:2457168791},
+    {c:"63060",n:"Southfield Public",f:4457.36,v:2818586860},
+    {c:"63030",n:"Pontiac",f:3769.06,v:3278889201},
+    {c:"63210",n:"Holly Area",f:3146.24,v:1271854570},
+    {c:"63020",n:"Ferndale",f:3116.21,v:1095186026},
+    {c:"63250",n:"Oak Park",f:2992.66,v:507760578},
+    {c:"63130",n:"Hazel Park",f:2909.92,v:469753767},
+    {c:"63280",n:"Lamphere",f:2425.82,v:805036678},
+    {c:"63180",n:"Brandon",f:2018.28,v:852276321},
+    {c:"63090",n:"Clarenceville",f:1619.20,v:395755275},
+    {c:"63270",n:"Clawson",f:1214.91,v:504508960},
+    {c:"63140",n:"Madison District",f:930.74,v:321239910},
+    {c:"63939",n:"Lighthouse Connections Academy",f:2038.98,v:0,a:1},
+    {c:"63912",n:"Oakland International Academy",f:1987.60,v:0,a:1},
+    {c:"63909",n:"Oakside Prep Academy",f:1418.79,v:0,a:1},
+    {c:"63914",n:"Advanced Technology Academy",f:1200.47,v:0,a:1},
+    {c:"63915",n:"Arts & Technology Pontiac",f:845.87,v:0,a:1},
+    {c:"63918",n:"Laurus Academy",f:790.28,v:0,a:1},
+    {c:"63922",n:"Great Oaks Academy",f:760.68,v:0,a:1},
+    {c:"63913",n:"Walton Charter Academy",f:757.94,v:0,a:1},
+    {c:"63924",n:"Michigan Math & Science",f:734.07,v:0,a:1},
+    {c:"63917",n:"Bradford Academy",f:669.84,v:0,a:1},
+    {c:"63921",n:"Crescent Academy",f:654.71,v:0,a:1},
+    {c:"63906",n:"Pontiac Academy for Excellence",f:551.53,v:0,a:1},
+    {c:"63938",n:"Keys Grace Academy",f:528.17,v:0,a:1},
+    {c:"63911",n:"Holly Academy",f:517.49,v:0,a:1},
+    {c:"63910",n:"Pollack Academic Center",f:516.35,v:0,a:1},
+    {c:"63901",n:"AGBU Manoogian",f:426.48,v:0,a:1},
+    {c:"63929",n:"Waterford Montessori Academy",f:398.77,v:0,a:1},
+    {c:"63934",n:"Kingsbury Country Day School",f:335.00,v:0,a:1},
+    {c:"63923",n:"Four Corners Montessori Academy",f:237.70,v:0,a:1},
+    {c:"63928",n:"Momentum Academy",f:216.67,v:0,a:1},
+    {c:"63931",n:"Oakland FlexTech High School",f:163.12,v:0,a:1},
+    {c:"63907",n:"Great Lakes Academy",f:157.42,v:0,a:1},
+    {c:"63926",n:"Faxon Academy",f:150.38,v:0,a:1},
+    {c:"63920",n:"Learn4Life Pontiac",f:104.82,v:0,a:1},
+  ];
+  
+  // sanity, at 1.5 mills on 2024-25 values:
+  //   all 52 entities   177,907 pupils, $77,065,032,452 taxable -> $649.76/pupil
+  //   28 traditional    161,744 pupils            -> $714.69/pupil
+
+  var $=function(id){return document.getElementById(id)};
+  var edited={};                                   // dcode -> user-entered pupil count
+  function rate(){ return parseFloat($('mills').value)/1000; }
+  function usd(n){ return (n<0?'-$':'$')+Math.abs(Math.round(n)).toLocaleString('en-US'); }
+
+  function pool(){
+    var inc=$('incAcad').checked, list=[], tv=0, fte=0;
+    DISTRICTS.forEach(function(d){
+      if(d.a && !inc) return;
+      var f=(d.c in edited)?edited[d.c]:d.f;
+      list.push({c:d.c,n:d.n,a:!!d.a,f:f,v:d.v});
+      tv+=d.v; fte+=f;
+    });
+    var levy=tv*rate();
+    return {list:list, tv:tv, fte:fte, levy:levy, pp:fte>0?levy/fte:0};
+  }
+
+  function drawTable(){
+    var p=pool(), body=$('dtBody'), rows=[];
+    p.list.forEach(function(d){
+      d.pays=d.v*rate(); d.gets=d.f*p.pp; d.net=d.gets-d.pays; rows.push(d);
+    });
+    rows.sort(function(a,b){return a.net-b.net});
+    var max=0; rows.forEach(function(d){ max=Math.max(max,Math.abs(d.net)); });
+
+    var html='';
+    rows.forEach(function(d){
+      var donor=d.net<0, w=max>0?(Math.abs(d.net)/max*50):0;
+      html+='<tr class="'+(d.c==='63150'?'me':'')+(d.a?' acad':'')+'">'
+        +'<td>'+d.n+'</td>'
+        +'<td class="num"><input class="fte'+((d.c in edited)?' ch':'')+'" type="number" min="0" step="1" '
+          +'data-c="'+d.c+'" value="'+Math.round(d.f)+'" aria-label="pupils in '+d.n+'"></td>'
+        +'<td class="num">'+(d.v?usd(d.v):'<span style="color:var(--muted)">none</span>')+'</td>'
+        +'<td class="num">'+(d.v?usd(d.pays):'<span style="color:var(--muted)">$0</span>')+'</td>'
+        +'<td class="num">'+usd(d.gets)+'</td>'
+        +'<td class="net '+(donor?'d':'r')+'">'+(donor?'':'+')+usd(d.net)+'</td>'
+        +'<td><div class="nb"><i class="'+(donor?'d':'r')+'" style="width:'+w.toFixed(1)+'%"></i></div></td>'
+        +'</tr>';
+    });
+    body.innerHTML=html;
+
+    var nd=rows.filter(function(d){return d.net<0}).length;
+    $('live').textContent=p.fte.toLocaleString('en-US',{maximumFractionDigits:0})+' pupils · '
+      +usd(p.levy)+' raised · '+usd(p.pp)+'/pupil · '+nd+' donors, '+(rows.length-nd)+' receivers';
+  }
+
+  function drawChain(){
+    var mv=Math.max(0,parseFloat($('mv').value)||0), sev=mv/2;
+    var tv=Math.max(0,parseFloat($('tvIn').value)||0);
+    var yr=tv*rate(), over=tv>sev;
+    $('chain').innerHTML=
+       row('Market value','what it would sell for',usd(mv))
+      +row('State equalized value','half of market value, by law',usd(sev))
+      +row('Taxable value', over?'<span style="color:var(--red)">above SEV, which Proposal A does not allow</span>'
+                                :'what you are actually taxed on',usd(tv))
+      +row('Millage rate','dollars per $1,000 of taxable value',parseFloat($('mills').value).toFixed(2)+' mills')
+      +row('Per year',null,usd(yr),true)
+      +row('Over six years','2026 to 2031',usd(yr*6));
+    $('millsEcho').textContent=parseFloat($('mills').value).toFixed(2)+' mills';
+  }
+  function row(k,sub,v,big){
+    return '<div class="step'+(big?' big':'')+'"><div class="k">'+k
+      +(sub?'<small>'+sub+'</small>':'')+'</div><div class="v">'+v+'</div></div>';
+  }
+
+  function redraw(){ drawChain(); drawTable(); }
+
+  ['mv','tvIn','mills'].forEach(function(id){
+    $(id).addEventListener('input',redraw);
+  });
+  // market value drives SEV; SEV seeds taxable value until the reader overrides it
+  $('mv').addEventListener('input',function(){
+    if(!$('tvIn').dataset.touched) $('tvIn').value=Math.round((parseFloat($('mv').value)||0)/2);
+  });
+  $('tvIn').addEventListener('input',function(){ $('tvIn').dataset.touched='1'; });
+  $('useSev').addEventListener('click',function(){
+    $('tvIn').value=Math.round((parseFloat($('mv').value)||0)/2);
+    delete $('tvIn').dataset.touched; redraw();
+  });
+  $('incAcad').addEventListener('change',drawTable);
+  $('resetBtn').addEventListener('click',function(){ edited={}; drawTable(); });
+  $('dtBody').addEventListener('input',function(e){
+    var t=e.target; if(!t.classList.contains('fte')) return;
+    var v=parseFloat(t.value);
+    if(isNaN(v)||v<0) return;
+    edited[t.getAttribute('data-c')]=v;
+    var pos=t.selectionStart, c=t.getAttribute('data-c');
+    drawTable();
+    var again=$('dtBody').querySelector('input[data-c="'+c+'"]');
+    if(again){ again.focus(); try{ again.setSelectionRange(pos,pos); }catch(err){} }
+  });
+
+  redraw();
 })();
 </script>
 </body>

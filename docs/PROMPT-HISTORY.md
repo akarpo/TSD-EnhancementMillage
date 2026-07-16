@@ -129,3 +129,22 @@ is public and sourced in [`TOOLING.md`](TOOLING.md).
    data from state servers and run from a clean checkout), corrected the errors this
    review found in [`TOOLING.md`](TOOLING.md) and [`tools/README.md`](../tools/README.md),
    and recorded the review in [`FINDINGS.md`](FINDINGS.md).
+
+**25.** *"After you do that, let's get back to the analysis. Where do we stand there? Along with updating the website?"* / *"I was more referring to a theoretical 2034 vote where they could change it from 1.5 mills to anything they wanted - presumably more, if enrollment continues to decrease. So that should be a part of what you build - a theoretical 2034 calculator that allows people to type in whatever mill count they want, up to 3, and also incorporates the same design for potential changes in enrollment across districts in the calculator"*
+→ Built the **"The numbers"** section: a plain-English Section 705 explainer, a
+   market-to-SEV-to-taxable-value calculator, and an interactive table of all 52 Oakland
+   entities with editable enrollment, an academy toggle, and a millage-rate control that
+   runs to the 3-mill statutory cap. Chose, on the author's instruction, to ship the
+   calculators **without** an argument attached. One thing the math settled: the rate
+   does not change *who* is a donor, because raising it scales what every district pays
+   and receives together. Only enrollment and tax-base shares change the sign. Framed as
+   "a future renewal" rather than 2034, since the levy runs 2026-2031 and no source
+   supports that specific year.
+
+**26.** *"Please ensure this current tooling you've created is captured..."* (continued)
+→ Applied all four corrections the review found: regenerated the `.docx` and both share
+   images from the softened copy (they had been contradicting the site since July 3),
+   replaced the MEA misattribution with the primary sources, corrected Troy's $9.7M to
+   $9.6M, Macomb's $55M to the audited $66.4M, and Troy's median sale to $435,000, and
+   fixed the dark-mode dead code. Corrections are noted in-place on the page rather than
+   made silently.
