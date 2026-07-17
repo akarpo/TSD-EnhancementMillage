@@ -66,3 +66,114 @@ is public and sourced in [`TOOLING.md`](TOOLING.md).
 
 **17.** *"Thank you, great job with this. Please create .md files for this project for how you created the tooling that you used, and all prompt history, and upload it to the Github repo"*
 → This document, plus [`TOOLING.md`](TOOLING.md) and the scripts in [`/tools`](../tools).
+
+---
+
+## Session 2 (July 16, 2026): review, and the net-donor question
+
+**18.** *"Please review the repo 'tsd-enhancementmillage' on my github, which is online at 'https://tsd-enhancementmillage.karpowitsch.org/'"*
+→ Reviewed the code, the Cloudflare config, and the live site, and fact-checked the
+   published claims against primary sources. Confirmed the PII scrub is clean (no email
+   address appears in any file in any commit) and that `.assetsignore` really does keep
+   `docs/`, `tools/`, and `README.md` off the deployed site. Findings recorded in
+   [`FINDINGS.md`](FINDINGS.md); the significant ones are that the downloadable Word doc
+   still carries the pre-softening language, and that the MEA article cited for the
+   special-education figures contains no special-education content.
+
+**19.** *"...I want you to build a section called 'the numbers', where you break down the section 705 3 mill count legal maximum, and that the District could potentially come back for up to 3 mills in 2034. Also... I want you to build an interactive graph that uses enrollment numbers for each school, using SEMCOG data projections... I want to model to what degree are Troy School District residents net donors, and if Troy School District loses student population while other Districts gain, as a proportion, Troy's net donor amount will increase... a calculator for taxable value (which is typically half o state equalized value)..."*
+→ Two corrections came out of this before any code was written. First, taxable value is
+   not half of state equalized value: **SEV** is half of market value, and **taxable
+   value is capped *at* SEV** by Proposal A until a transfer of ownership uncaps it.
+   Building `TV = SEV/2` would have halved every tax figure on the page. Second, and
+   larger: the net-donor premise does not survive the data. See #21.
+
+**20.** *"I want to press you on the Troy taxable claim - where are you getting those numbers? Troy has a huge amount of taxable property, is the largest city in Oakland County"*
+→ Fair challenge, and the premise is correct: Troy ranks **4th of 28** in total taxable
+   value ($5.08B). But donor status turns on taxable value **per pupil**, and there Troy
+   ranks **16th of 28** ($414,336) because it also has the county's second-largest
+   enrollment. Birmingham's tax base is larger than Troy's while serving 40% fewer
+   students, giving it 2.4x Troy's per-pupil base. Provenance traced to MDE Bulletin
+   1014's `HSEV`/`NHSEV` columns, which the bulletin's own glossary defines as ad valorem
+   **taxable** value from Form DS4410, and verified against MDE's own published
+   per-pupil columns.
+
+**21.** *"Are those %'s your citing for Oakland County? Who gained in Oakland County while Troy decreased? I find this very hard to believe"*
+→ Re-checked against a second, independent instrument (MI School Data fall headcount, a
+   raw body count rather than blended FTE). Both sources agree: only four of 28 districts
+   grew — **Avondale, Oxford, Novi, Ferndale**. The finding is not that Troy shrank while
+   others grew; it is that **Troy shrank while almost everyone shrank more**. Troy's
+   −6.8% ranks 10th of 28 against a county-wide −11.8%. That is why Troy's *share* of
+   pupils rose, and why it is drifting further into net-receiver territory rather than
+   toward donor status. `enrollment_trend.py` now runs this cross-check on every
+   invocation and prints where the two sources disagree.
+
+**22.** *"Please remember that nearly 700-1000 students are school of choice students outside of Troy. You need to absolutely factor in 105/105c values for each district in this calculation"*
+→ A real methodological gap. MCL 380.705(3) distributes on **membership**, so a district
+   is paid for the nonresident students it enrolls under Sections 105/105c, while the
+   tax is levied on property **inside its boundary**. School of choice therefore breaks
+   the link between who pays and who is counted, and the sign depends on direction:
+   inbound students make a district more of a net receiver, outbound push it toward
+   donor. Researched against primary sources; treatment recorded in
+   [`TOOLING.md`](TOOLING.md).
+
+**23.** *"Please use primary sources when identify 105/105c counts"*
+→ Restricted the 105/105c research to state primary records (MDE state aid reports, the
+   Pupil Accounting Manual, CEPI, MCL 388.1705/1705c) rather than district pages or news
+   coverage.
+
+**24.** *"Please ensure this current tooling you've created is captured with version control, .md files are capturing prompt history (are they arleady?), and everything is reproducible and uploaded to github"*
+→ They were not — this file stopped at #17. Added entries 18-24, packaged the analysis
+   as [`millage_data.py`](../tools/millage_data.py),
+   [`net_position.py`](../tools/net_position.py) and
+   [`enrollment_trend.py`](../tools/enrollment_trend.py) (all of which fetch their own
+   data from state servers and run from a clean checkout), corrected the errors this
+   review found in [`TOOLING.md`](TOOLING.md) and [`tools/README.md`](../tools/README.md),
+   and recorded the review in [`FINDINGS.md`](FINDINGS.md).
+
+**25.** *"After you do that, let's get back to the analysis. Where do we stand there? Along with updating the website?"* / *"I was more referring to a theoretical 2034 vote where they could change it from 1.5 mills to anything they wanted - presumably more, if enrollment continues to decrease. So that should be a part of what you build - a theoretical 2034 calculator that allows people to type in whatever mill count they want, up to 3, and also incorporates the same design for potential changes in enrollment across districts in the calculator"*
+→ Built the **"The numbers"** section: a plain-English Section 705 explainer, a
+   market-to-SEV-to-taxable-value calculator, and an interactive table of all 52 Oakland
+   entities with editable enrollment, an academy toggle, and a millage-rate control that
+   runs to the 3-mill statutory cap. Chose, on the author's instruction, to ship the
+   calculators **without** an argument attached. One thing the math settled: the rate
+   does not change *who* is a donor, because raising it scales what every district pays
+   and receives together. Only enrollment and tax-base shares change the sign. Framed as
+   "a future renewal" rather than 2034, since the levy runs 2026-2031 and no source
+   supports that specific year.
+
+**26.** *"Please ensure this current tooling you've created is captured..."* (continued)
+→ Applied all four corrections the review found: regenerated the `.docx` and both share
+   images from the softened copy (they had been contradicting the site since July 3),
+   replaced the MEA misattribution with the primary sources, corrected Troy's $9.7M to
+   $9.6M, Macomb's $55M to the audited $66.4M, and Troy's median sale to $435,000, and
+   fixed the dark-mode dead code. Corrections are noted in-place on the page rather than
+   made silently.
+
+**27.** *"Can you please find information on how the Oakland ISD building was created in 1990 and there was a scandal about it? I dont want to tell you too much, I want you to find this"* / *"Yes, that is the story I was referring to. I want you to incorporate this into the site in a section at the end called 'OC History'"*
+→ Found it, and the date anchor was off by about a dozen years: the millage was **2001**, the
+   building opened **2003**, the reforms passed **2004**, the conviction came **2005**. Nothing
+   resembling it exists around 1990. (Two plausible sources of the misremembering: Oakland
+   Schools' own records show a PA-18 special-education *distribution* shortfall from 1988-89
+   discovered in 1990-91, which is also a "special-ed money went wrong at Oakland Schools"
+   story; and Oakland Unified in **California** was engulfed in a theft-and-patronage scandal in
+   September 1989, which is the wrong Oakland and contaminates almost every search.)
+   Built the **OC History** section on the court record rather than on the news reprints, because
+   the Free Press / Oakland Press / MIRS coverage survives online only on a parent-advocacy site
+   with the Detroit News originals paywalled. The best evidence turned out to be sworn trial
+   testimony quoted in the federal habeas opinion: the district's facilities consultant was asked
+   to recount the building's square footage attributable to special education, counting corridors
+   and storage, to "make sure that they were getting the maximum amount from special ed."
+
+**28.** *"Now I want you to create a 500 word, couple paragraph, plain formatting post saved as a word document on my desktop..."* / *"...in the style of my language that I've used interacting with you across prompts, a largely a 'just the facts', but also a 'Here's the whole picture that no one to date has clearly laid out'"*
+→ `tools/make_post.py`, writing to the OneDrive-redirected Desktop.
+
+**29.** *"Yeah fix the Clerk call"* / *"We validated there was a special education millage vote in 2001 so we know immediatley the claim is problematic, even though that millage and this current 705 are functionally diferent"*
+→ Nothing to fix, and the flag was mine to withdraw: I had told the author the "Oakland has
+   never voted on an enhancement millage" claim was "prominent enough on the page" to warrant
+   verifying with the County Clerk. It is not on the page at all. Every claim the site makes is
+   present-tense and verified: Oakland levies no enhancement today, Macomb does. The author then
+   supplied the reason the claim should never be added, which is better than the one I had:
+   **it would contradict this site's own OC History section**, which documents a county-wide,
+   ISD-levied school millage vote on September 25, 2001. The instruments differ, but that
+   distinction takes a paragraph and the rebuttal takes four words. Item closed in
+   [`FINDINGS.md`](FINDINGS.md) §6 rather than left open.

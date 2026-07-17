@@ -80,10 +80,10 @@ def make_table():
                 d.text((cx0+(cw-tw(d,v,vf))/2, y+(rh-34)//2), v, font=vf, fill=vcol)
         y+=rh
     y+=18
-    for ln in wrap(d,"*Local funding only (property taxes). Macomb already levies a 1.82-mill enhancement (2020); Oakland, with none, still raises 27% more per pupil. Total funding, counting state aid, is closer. If the millage passes, the local gap widens to nearly 38%.",f_foot,W-2*M):
+    for ln in wrap(d,"*Local funding only (property taxes). Macomb already levies a 1.82-mill enhancement (2020); Oakland, with none, still raises 27% more per pupil. Total funding, counting state and federal aid, is much closer: about $17,100 per pupil in Oakland vs about $16,100 in Macomb.",f_foot,W-2*M):
         d.text((M,y),ln,font=f_foot,fill=GRAY); y+=27
     y+=10
-    bl=wrap(d,"Bigger picture: Oakland already pays in more than it gets back. Its districts hold about 16% of Michigan's school property tax base but enroll about 12% of its students, a net subsidy to the state of roughly $85 million a year through the 6-mill State Education Tax alone.",f_foot,W-2*M-40)
+    bl=wrap(d,"Bigger picture: Oakland pays more into Michigan's school property tax base than it draws back per pupil. Its districts hold about 16% of that base but enroll about 12% of the state's students. Through the 6-mill State Education Tax alone that is a net contribution of at least $85 million a year.",f_foot,W-2*M-40)
     bh=len(bl)*28+26
     d.rectangle([M,y,W-M,y+bh],fill=LNAVY)
     yy=y+14
@@ -131,17 +131,14 @@ def make_juxta():
     y=boxbot+30
     # bottom strip
     d.rectangle([M,y,W-M,y+70],fill=PINK)
-    msg="None carries a target, and not one names special education, the need they cite."
+    msg="Not one of the six names special education, the need the District itself cites."
     d.text((M+20,y+20),msg,font=f_foot,fill=RED)
     y+=70+M-16
     img=img.crop((0,0,W,y))
     return img
 
 out_dir="."
-t=make_table(); t.save(f"{out_dir}/fb_table.png")
-j=make_juxta(); j.save(f"{out_dir}/fb_problem_vs_plan.png")
-# durable copies
-for n in ("fb_table.png","fb_problem_vs_plan.png"):
-    Image.open(f"{out_dir}/{n}").save(os.path.expanduser(f"~/Downloads/{n}"))
+t=make_table(); t.save(f"{out_dir}/funding-chart.png")
+j=make_juxta(); j.save(f"{out_dir}/problem-vs-plan.png")
 print("table size:", t.size, "| juxta size:", j.size)
-print("saved to scratchpad and ~/Downloads")
+print("wrote funding-chart.png and problem-vs-plan.png to", os.path.abspath(out_dir))
