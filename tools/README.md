@@ -14,9 +14,12 @@ that produced the site's deliverables, kept as-run.
 | `millage_data.py` | shared data layer: downloads and parses the state source files | `openpyxl` |
 | `net_position.py` | who pays vs. who receives under the millage, per district | `openpyxl` |
 | `enrollment_trend.py` | 8 years of enrollment / taxable-value shares, cross-checked against a second source | `openpyxl` |
+| `export_site_data.py` | emits the district table `index.html`'s calculator embeds | `openpyxl` |
+| `verify_deliverables.py` | fails if the published `.docx` has drifted away from the site | none |
 
 ```bash
 pip install openpyxl
+python3 verify_deliverables.py           # run after touching index.html or the generators
 python3 millage_data.py                  # fetch sources into tools/cache/ (gitignored)
 python3 net_position.py                  # academies included, per the ballot language
 python3 net_position.py --no-academies   # traditional districts only, the campaign's basis
