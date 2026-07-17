@@ -204,10 +204,20 @@ is zero-sum — Troy's gain dilutes every other district.
   2026-2031, and no source points to 2034. The real procedural gate is §705(2), which
   requires constituent boards representing a majority of the county's pupils to adopt
   matching resolutions before the ISD board can place anything on the ballot.
-- **"Oakland has never voted on an enhancement millage before"** — probably true, but this
-  is proof of absence from web search only. Wayne County's 2016 approval is the likely
-  source of any "2016" recollection. Worth a call to the Oakland County Clerk before
-  publishing.
+- ~~**"Oakland has never voted on an enhancement millage before"**~~ — **closed; do not make
+  this claim.** It is not on the site and should not be added. Two reasons, and the second is
+  the one that matters. First, it can only be supported by absence of evidence: no prior
+  Oakland vote turns up, but older local canvass records are poorly indexed and the Clerk's
+  own results archive blocks automated retrieval, so "we could not find one" is the ceiling.
+  (Wayne County's 2016 approval is the likely source of any "2016" recollection.) Second, and
+  fatally: **it would contradict this site's own OC History section**, which documents Oakland
+  Schools putting a county-wide, ISD-levied school millage to voters on September 25, 2001.
+  That levy and a §705 enhancement millage are genuinely different instruments, but the
+  distinction needs a paragraph to explain and a reader will not wait for it. "Oakland has
+  never been asked" invites "yes we were, in 2001" — and that exchange is lost even when the
+  underlying point is right. A claim that survives only on a technical carve-out is not worth
+  making. The present-tense claims the site *does* make — that Oakland levies no enhancement
+  today while Macomb does — are verified and sufficient.
 - **Basis mixing in the ~16% claim.** The site's $77B numerator is school-district
   taxable value while the $481.5B denominator is all statewide property. Treasury's
   Oakland *county* figure is $80.36B. Consistent basis gives ~16.7-17.0%.

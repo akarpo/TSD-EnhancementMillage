@@ -166,3 +166,14 @@ is public and sourced in [`TOOLING.md`](TOOLING.md).
 
 **28.** *"Now I want you to create a 500 word, couple paragraph, plain formatting post saved as a word document on my desktop..."* / *"...in the style of my language that I've used interacting with you across prompts, a largely a 'just the facts', but also a 'Here's the whole picture that no one to date has clearly laid out'"*
 → `tools/make_post.py`, writing to the OneDrive-redirected Desktop.
+
+**29.** *"Yeah fix the Clerk call"* / *"We validated there was a special education millage vote in 2001 so we know immediatley the claim is problematic, even though that millage and this current 705 are functionally diferent"*
+→ Nothing to fix, and the flag was mine to withdraw: I had told the author the "Oakland has
+   never voted on an enhancement millage" claim was "prominent enough on the page" to warrant
+   verifying with the County Clerk. It is not on the page at all. Every claim the site makes is
+   present-tense and verified: Oakland levies no enhancement today, Macomb does. The author then
+   supplied the reason the claim should never be added, which is better than the one I had:
+   **it would contradict this site's own OC History section**, which documents a county-wide,
+   ISD-levied school millage vote on September 25, 2001. The instruments differ, but that
+   distinction takes a paragraph and the rebuttal takes four words. Item closed in
+   [`FINDINGS.md`](FINDINGS.md) §6 rather than left open.
