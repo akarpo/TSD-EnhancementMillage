@@ -49,7 +49,7 @@ fetchers).
 | Script | Makes | Needs |
 |---|---|---|
 | `build_doc.py` | the Word analysis + "Facebook Kit" (`.docx`) | `python-docx`; both share images in the working dir |
-| `make_images.py` | `fb_table.png`, `fb_problem_vs_plan.png` | `Pillow`, `matplotlib` (fonts) |
+| `make_images.py` | `funding-chart.png`, `problem-vs-plan.png` | `Pillow`, `matplotlib` (fonts) |
 | `make_banner.py` | `tsd_group_banner.png` (FB group cover) | `Pillow`, `matplotlib` (fonts) |
 
 ```bash
@@ -59,23 +59,29 @@ python3 build_doc.py
 python3 make_banner.py
 ```
 
+Run them from `assets/` so they land where the site expects:
+
+```bash
+cd assets && python3 ../tools/make_images.py && python3 ../tools/build_doc.py
+python3 ../tools/verify_deliverables.py    # confirm they still agree with the site
+```
+
 **Notes**
-- These are the scripts *as run*. Output paths were the author's working directory
-  (sanitized to `.`) plus `~/Downloads`; adjust for your environment.
-- **The output filenames do not match the repo's asset filenames.** Three renames were
-  done by hand and are not captured in any script:
-  `fb_table.png` → `assets/funding-chart.png`,
-  `fb_problem_vs_plan.png` → `assets/problem-vs-plan.png`,
-  `Oakland_Enhancement_Millage_Analysis.docx` → `assets/TSD-Enhancement-Millage-Analysis.docx`.
-  Running the generators as documented reproduces the *content* but not the *names*.
+- `make_images.py` and `build_doc.py` now emit **the repo's actual asset filenames**
+  (`funding-chart.png`, `problem-vs-plan.png`, `TSD-Enhancement-Millage-Analysis.docx`).
+  Until July 2026 they emitted `fb_table.png`, `fb_problem_vs_plan.png` and
+  `Oakland_Enhancement_Millage_Analysis.docx`, and three hand renames closed the gap;
+  those renames are gone and the scripts reproduce the names as well as the content.
+- **They are also back in step with the site.** They previously still emitted the
+  pre-softening language `819d3da` removed from `index.html`, which is how the published
+  document came to contradict the page linking it for two weeks. `verify_deliverables.py`
+  now fails if that recurs. See [`../docs/FINDINGS.md`](../docs/FINDINGS.md) §1.
 - `build_doc.py` reads no data at runtime — the analyzed figures are baked in as constants
   after the data pipeline in `TOOLING.md` produced them. To re-derive them from source,
-  follow `TOOLING.md` §7.
+  follow `TOOLING.md` §7. This is why they can drift, and why the guard exists.
 - `build_doc.py` has an `nd()` guard that raises if an em/en dash appears in document
   text, but it does **not** cover every string: the title, the table cells, and several
   runs bypass it. It also relies on `assert`, which `python -O` strips.
-- **The generators are stale relative to the site.** They still emit the pre-softening
-  language that `819d3da` removed from `index.html`, so re-running `build_doc.py` today
-  reproduces the *old* argument. See [`../docs/FINDINGS.md`](../docs/FINDINGS.md) §1.
-- `make_banner.py`'s palette was sampled from Troy School District's own logo
-  (black + vegas gold `#b4a269` + cream).
+- `make_banner.py` is the one script that still writes outside its working directory: it
+  also drops a copy in `~/Downloads`. Its palette was sampled from Troy School District's
+  own logo (black + vegas gold `#b4a269` + cream).

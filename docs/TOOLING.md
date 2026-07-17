@@ -28,8 +28,8 @@ the State of Michigan's own files (see [Validation](#validation)).
 | MDE **Financial Information Database (FID)**, Revenue Data, 2024-25 | `2025_CEPI_33_FID_REVENUE_DATA.xlsx`, inside `michigan.gov/cepi/.../MISchoolData/2024-25/2025CEPI_32_33_34_Data.zip` (linked from `mischooldata.org/financial-data-files`) | **ISD-entity** revenue by fund & major class (the piece not in the bulletins) |
 | Michigan **Senate Fiscal Agency**, "State Property Valuations 1970-2025" | `sfa.senate.michigan.gov/Revenue/StateEqualizedPropertyValues.PDF` | **Statewide taxable value** (2024 = $481.5B) |
 | U.S. Census (2024) | census.gov QuickFacts | County population (Oakland ~1,296,888; Macomb ~886,175) |
-| Redfin / Zillow / RealtyTrac | web | Troy 2025 median home sale price (~$450,000) |
-| MEA, MI House Fiscal Agency, MI League for Public Policy, Autism Alliance of MI | web | IDEA / special-education funding shortfall figures |
+| Redfin | web | Troy 2025 median home sale price (~$435,000; Redfin reported $433,750 for Dec. 2025). Zillow's ZHVI (~$442,000) is a value index, not a sale price. |
+| Congressional Research Service R44624; MI House Fiscal Agency "Fiscal Brief: Special Education Funding" (Feb. 2026); MI League for Public Policy; Autism Alliance of MI | web | IDEA / special-education funding figures. **The MEA's "Facts v. Fallacy" was cited here until July 2026; that article contains no special-education content and the attribution was wrong.** See [`FINDINGS.md`](FINDINGS.md) §2. |
 | Troy School District newsletter, June 30, 2026 | recipient email (transcript in `assets/district-email.html`, scrubbed) | The District's own quotes and the six proposed uses |
 | Oakland enhancement campaign | `oaklandenhancementmillage.com` | Proposal terms: 1.5 mills, 6 years, ~$781/pupil |
 
@@ -64,21 +64,25 @@ curl -s -A "$UA" -L "<url>" -o out.file
 
 | Script | Library | Produces |
 |---|---|---|
-| `tools/build_doc.py` | `python-docx` | `Oakland_Enhancement_Millage_Analysis.docx` (the analysis + a ready-to-post "Facebook Kit") |
-| `tools/make_images.py` | `Pillow` | `fb_table.png` (Oakland vs Macomb funding table + net-contributor banner) and `fb_problem_vs_plan.png` (the "problem they name vs. plan they offer" juxtaposition) |
+| `tools/build_doc.py` | `python-docx` | `TSD-Enhancement-Millage-Analysis.docx` (the analysis + a ready-to-post "Facebook Kit") |
+| `tools/make_images.py` | `Pillow` | `funding-chart.png` (Oakland vs Macomb funding table + net-contributor banner) and `problem-vs-plan.png` (the "problem they name vs. plan they offer" juxtaposition) |
 | `tools/make_banner.py` | `Pillow` | `tsd_group_banner.png` (Facebook group cover, 1640×856) |
+| `tools/make_post.py` | `python-docx` | the plain-text announcement post (writes to the OneDrive-redirected Desktop) |
+| `tools/verify_deliverables.py` | none | fails if the published `.docx` has drifted away from the site |
 
-> **The generators' filenames do not match the repo's assets.** `fb_table.png` was renamed
-> by hand to `assets/funding-chart.png`, `fb_problem_vs_plan.png` to
-> `assets/problem-vs-plan.png`, and `Oakland_Enhancement_Millage_Analysis.docx` to
-> `assets/TSD-Enhancement-Millage-Analysis.docx`. The scripts reproduce the content, not
-> the names. The generators are also **stale relative to the site**: they still emit the
-> pre-softening language removed from `index.html` in `819d3da`. See
-> [`FINDINGS.md`](FINDINGS.md) §1.
+> **Both problems here are fixed as of July 2026, and guarded.** The generators used to emit
+> `fb_table.png`, `fb_problem_vs_plan.png` and `Oakland_Enhancement_Millage_Analysis.docx`,
+> with three hand renames closing the gap to the repo's real asset names; they now emit the
+> real names directly. They were also **stale relative to the site**, still producing the
+> pre-softening language removed from `index.html` in `819d3da`, which is how the published
+> Word document came to contradict the page that linked it. Both are corrected, and
+> `tools/verify_deliverables.py` now fails if either recurs. See [`FINDINGS.md`](FINDINGS.md) §1.
 
 Notable techniques:
-- **Dash guard.** `build_doc.py` routes every string through an `nd()` helper that
-  `assert`s no em dash (`—`) or en dash (`–`) can slip into the document.
+- **Dash guard.** `build_doc.py` routes text through an `nd()` helper that `assert`s no em
+  dash (`—`) or en dash (`–`) reaches the document. It does **not** cover every string, despite
+  what an earlier version of this file claimed: the title, the table cells and several runs
+  bypass it, and `assert` is stripped under `python -O`.
 - **Real "last modified" date.** `python-docx` copies a fixed 2013 timestamp from its
   blank template; the script overwrites `core_properties.created/modified` with the
   current time so Word shows the correct date.
